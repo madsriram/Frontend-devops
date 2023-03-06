@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var str=prompt("Enter your name");
+            var dt= new Date();
+            var hr=dt.getHours();
+            if(hr>0&&hr<11){
+                document.write("Good Morning! "+str);
+            }
+            else if(hr>=11&&hr<16){
+                document.write("Good Afternoon! "+str);
+            }
+            else if(hr>=16&&hr<19){
+                document.write("Good Evening! "+str)
+            }
+            else{
+                document.write("Good Night! "+str)
+            }
+            
+    </script>
+</body>
+</html>

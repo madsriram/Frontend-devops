@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="output" border="1"></table>
+    <script>
+        getTodos =(callback)=>{
+        request=new XMLHttpRequest();
+        request.addEventListener('readystatechange', ()=>{
+            if(request.readyState===4&&request.status==200){
+                data=JSON.parse(request.responseText);
+                callback(undefined, data);
+            }
+            else if(request.readyState==4){
+                callback('could not fetch data', undefined);
+            }
+        });
+        request.open('GET', 'https://jsonplaceholder.typicode.com/todos');
+        request.send();
+        };
+
+        getTodos((err, data)=>{
+            if(err){
+                console.log(err);}
+            else{
+                var data_rows="";
+                var h="<tr><th>IndexId</th><th>ID</th><th>Title</th><th>Completed</th></tr>"
+                for (i in data) {
+                     data_rows += "<tr><td>"+data[i].id+"</td><td>"+data[i].userId+"</td><td>"+data[i].title+"</td><td>"+data[i].completed+"</td></tr>";
+                }
+                document.getElementById('output').innerHTML=h+data_rows;
+                // console.log(data);
+            }        
+        });
+    </script>
+</body>
+</html>

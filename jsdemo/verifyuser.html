@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h2>Sign-in/ Sign-up</h2>
+    <form name="sform">
+        Username : <input type="text" name="username" id="un" onblur="checkuser()"><p></p>
+        Password : <input type="password" name="password" id="pwd"><p></p>
+        <input type="button" value="Sign-in" onclick="signin()">
+        <input type="button" value="Sign-up" onclick="signup()">
+    </form>
+    <div id="result"></div>
+    </center>
+    <script>
+        const usermap=new Map();
+        function signup(){
+            if(usermap.has(document.getElementById('un').value)){
+                document.getElementById('result').innerHTML="<h2> User already exists...";
+                    document.getElementById('result').style.color='red';
+            }
+            else{
+                usermap.set(document.getElementById('un').value, document.getElementById('pwd').value);
+            document.getElementById('result').innerHTML="Congratulations! your registration is successfull";
+            document.getElementById('result').style.color='green';
+            }
+            
+        }
+        function signin(){
+            var pass=usermap.get(document.getElementById('un').value);
+            if(usermap.has(document.getElementById('un').value)){
+                if(pass==document.getElementById('pwd').value){
+            document.getElementById('result').innerHTML="<h2>Congratulations! Welcome" +document.getElementById('un').value+" you have logged in successfull</h2>";
+            document.getElementById('result').style.color='green';
+            }
+            else{
+                document.getElementById('result').innerHTML="<h3>Password INCORRECT....! PLEASE VERIFY";
+                    document.getElementById('result').style.color='red';
+            }
+            }
+            else{
+                document.getElementById('result').innerHTML="<h3>User does not exit...!";
+                    document.getElementById('result').style.color='red';
+            }
+        }
+        function checkuser(){
+            if(usermap.has(document.getElementById('un').value)){
+                document.getElementById('result').innerHTML="<h2> Someone Has already took this name please try another...!";
+                    document.getElementById('result').style.color='red';
+            }
+            else{
+                document.getElementById('result').innerHTML=" ";
+            }
+        }
+    </script>
+</body>
+</html> 
