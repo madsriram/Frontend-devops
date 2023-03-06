@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+        function dragStart(ev){
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function dragDrop(ev){
+            ev.preventDefault();
+            var data= ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            if(data=="drag1"){
+                document.getElementById('res').innerHTML="Congratulations! you have choosen Correct Answer";
+                document.getElementById('res').style="color: green"
+            }
+            else{
+                document.getElementById('res').innerHTML="OOPs..! You have choosen Wrong Answer";
+                document.getElementById('res').style="color: red"
+            }
+        }
+        function opt(){
+            document.getElementById('M').style='color: black';
+            document.getElementById('S').style='color: black';
+            document.getElementById('Sc').style='color: black';
+            document.getElementById('P').style='color: black';
+            var c=document.f1.option1.value;
+            switch(c){
+                case 'M':
+                    document.getElementById('M').style='color:red';
+                    break;
+                case 'S':
+                    document.getElementById('S').style='color:green';
+                    break;
+                case 'Sc':
+                    document.getElementById('Sc').style='color:red';
+                    break;
+                case 'P':
+                    document.getElementById('P').style='color:red';
+                    break;
+                
+            }
+        }
+        function ver(){
+            var c1=document.getElementById('c1').checked;
+            var c2=document.getElementById('c2').checked;
+            var c3=document.getElementById('c3').checked;
+            var c4=document.getElementById('c4').checked;
+            var c5=document.getElementById('c5').checked;
+            if(c1==true&&c2==false&&c3==true&&c4==false&&c5==true){
+            document.getElementById('res123').innerHTML="<b>Correct..! Answer";
+            document.getElementById('res123').style="color:green"
+            }
+            else{
+            document.getElementById('res123').innerHTML="<b>Wrong..! Answer";
+            document.getElementById('res123').style="color:red"
+            }
+        }
+    </script>
+    <style>
+        .mainbox{
+            display: flex;
+        }
+        .box{
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+            padding: 1px;
+            border: 2px solid #000;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<h2>_________ is used for designing a web page <br>Drag the correct image into the answerbox</h2>
+
+<div class="mainbox">
+    <div class="box" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+        <img id="drag1" src="../html.jpg" alt="image" draggable="true" ondragstart="dragStart(event)" width="50px" height="50px">
+    </div>
+    <div class="box" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+        <img id="drag2" src="../js.jpg" alt="image" draggable="true" ondragstart="dragStart(event)" width="50px" height="50px">
+    </div>
+    <div class="box" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+        <img id="drag3" src="../css.png" alt="image" draggable="true" ondragstart="dragStart(event)" width="50px" height="50px">
+    </div>
+    
+</div><p></p>
+    
+<div class="mainbox">
+    <h3>Answer Box</h3>
+    <div class="box" ondrop="dragDrop(event)" ondragover="allowDrop(event)" id="answerbox">
+       </div>
+       <h3 id="res"></h3>
+</div>
+    <hr>
+<h2>CSS is a ___________</h2>
+    <form name="f1" onchange="opt()">
+        <input type="radio" name="option1" value="M"><span id="M">Markup Language</span><p></p>
+        <input type="radio" name="option1" value="S"><span id="S">StyleSheet Language</span><p></p>
+        <input type="radio" name="option1" value="Sc"><span id="Sc">Scripting Language</span><p></p>
+        <input type="radio" name="option1" value="P"><span id="P">Programming Language</span><p></p>
+    </form>
+    <hr>
+<h2>Javascript is a <br>(Select all correct options) </h2>
+
+    <form name="f2">
+        <input type="checkbox" name="option1" id="c1">Interpreted Language<p></p>
+        <input type="checkbox" name="option1" id="c2">Compiled Language<p></p>
+        <input type="checkbox" name="option1" id="c3">Loosly typed Language<p></p>
+        <input type="checkbox" name="option1" id="c4">Markup Language<p></p>
+        <input type="checkbox" name="option1" id="c5">Object based Language &emsp;&emsp;&emsp;&emsp;
+        <input type="button" onclick="ver()" value="click">&emsp;&emsp;&emsp;&emsp;<span id="res123"></span>
+    </form>
+    <hr>
+</body>
+</html>

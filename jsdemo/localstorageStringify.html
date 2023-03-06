@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        First Name: <input type="text" name="firstname" id="fn"><p></p>
+        <input type="button" value="Store Data" onclick="storedata()">
+        <input type="button" value="Get Data" onclick="showdata()">
+    </form>
+    <h1 id="res"></h1>
+    <h2 id="hc"></h2>
+    <script>
+        function storedata(){
+            var fname=document.getElementById("fn").value;
+            // sessionStorage.setItem("firstname",fname);
+            localStorage.setItem("firstname",fname);
+            var courses=["HTML","CSS","JavaScript"];
+            localStorage.setItem("courses",JSON.stringify(courses));
+            // alert("Data stored in sessionStorage");
+            alert("Data stored in localStorage");
+        }
+        function showdata(){
+            //var fname=sessionStorage.getItem("firstname");
+            var fname=localStorage.getItem("firstname");
+            document.getElementById('res').innerHTML=fname+"<br>";
+            var list=JSON.parse(localStorage.getItem('courses'));
+            document.getElementById('hc').innerHTML=list;
+        }
+    </script>
+</body>
+</html>

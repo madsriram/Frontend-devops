@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Image</h2>
+    <img id="f" src="../pic.jpg" alt="nthg" width="400" height="400">
+    <p>Canvas: </p>
+    <canvas id="c" width="400" height="400" style="border:2px solid #000;"></canvas>
+    <p></p><button onclick="fillCanvas()">Fill Canvas</button>
+    <script>
+        function fillCanvas(){
+            var c=document.getElementById("c");
+            var ctx=c.getContext("2d");
+            var img=document.getElementById("f");
+            ctx.drawImage(img, 10,10,380,380);
+        }
+    </script>
+</body>
+</html>

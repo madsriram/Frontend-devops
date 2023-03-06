@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <h2 id="username"></h2>
+        <form name="sform" onload="getCat()">
+            Category  <select id="cat" onchange="getProduct()">
+                <option value=-1>Select</option>
+                <option value="ele">Electronics</option>
+                <option value="sta">Stationary</option>
+                <option value="gro">Grocery</option>
+            </select><p></p>
+            Product  <select id="un" onchange="hi()">
+                <option value=-1>Select</option>
+            </select><p></p>
+            Price <input type="text" id="price" readonly><p></p>
+            Quantity <input type="text" name="" id="quant"><p></p>
+            <input type="button" value="Add to Cart" onclick="add2cart()">
+            <input type="button" value="Clear Cart" onclick="Ccart()">
+            <input type="button" value="Generate Bill" onclick="bill()">
+            <input type="reset" value="Clear" onclick="res()"><p></p>
+        </form>
+        <div id="result"></div>
+        </center>
+        <script>
+            sessionStorage.setItem("totalbillamt", 0);
+            var name=localStorage.getItem("cur_user");
+            document.getElementById('username').innerHTML="Welcome...! "+name;
+            const electronicMap=new Map([['Select',''],['laptop', 42000],['mobile', 22000],['machine', 8000]]);
+            const stationaryMap=new Map([['Select',''],['Bag', 2000],['books', 1500],['pecncil', 35]]);
+            const groceryMap=new Map([['Select',''],['soap', 30],['paste', 50],['vegetables', 560]]);
+            function add2cart(){
+                var product=document.getElementById('un').value;
+                var amt;
+                switch(document.getElementById('cat').value){
+                case 'ele' : 
+                amt=parseInt(electronicMap.get(product))*parseInt(document.getElementById('quant').value);
+                   document.getElementById('price').value=electronicMap.get(product);
+                   var totalamt=sessionStorage.getItem("totalbillamt");
+                   totalamt=parseInt(totalamt)+parseInt(amt);
+                sessionStorage.setItem("totalbillamt",totalamt);
+                break;
+                case 'sta' : 
+                amt=parseInt(stationaryMap.get(product))*parseInt(document.getElementById('quant').value);
+                   document.getElementById('price').value=stationaryMap.get(product);
+                   var totalamt=sessionStorage.getItem("totalbillamt");
+                   totalamt=parseInt(totalamt)+parseInt(amt);
+                sessionStorage.setItem("totalbillamt",totalamt);
+                break;
+                case 'gro' :
+                    amt=parseInt(groceryMap.get(product))*parseInt(document.getElementById('quant').value);
+                   document.getElementById('price').value=groceryMap.get(product);
+                   var totalamt=sessionStorage.getItem("totalbillamt");
+                   totalamt=parseInt(totalamt)+parseInt(amt);
+                sessionStorage.setItem("totalbillamt",totalamt);                
+                break;
+            }
+            }
+            function getProduct(){
+                document.getElementById('un').innerHTML=" ";
+            switch(document.getElementById('cat').value){
+                case 'ele' : 
+                for(var pname of electronicMap.keys()){
+                    var option=document.createElement('option');
+                    option.text=pname;
+                    document.getElementById('un').add(option);
+                }
+                break;
+                case 'sta' : 
+                for(var pname of stationaryMap.keys()){
+                    var option=document.createElement('option');
+                    option.text=pname;
+                    document.getElementById('un').add(option);
+                }
+                break;
+                case 'gro' :
+                for(var pname of groceryMap.keys()){
+                    var option=document.createElement('option');
+                    option.text=pname;
+                    document.getElementById('un').add(option);
+                }
+                break;
+            }
+            }
+            function bill(){
+                var totamt=sessionStorage.getItem("totalbillamt");
+                document.getElementById('result').innerHTML="Thank You... "+name+" Your total bill amount is : "+totamt;
+                /*var product=document.getElementById('un').value;
+                var amt;
+                switch(document.getElementById('cat').value){
+                case 'ele' : 
+                amt=parseInt(electronicMap.get(product))*parseInt(document.getElementById('quant').value);
+                   document.getElementById('price').value=electronicMap.get(product);
+                   document.getElementById('result').innerHTML="Your bill amount is :"+amt;
+                break;
+                case 'sta' : 
+                amt=parseInt(stationaryMap.get(product))*parseInt(document.getElementById('quant').value);
+                   document.getElementById('price').value=stationaryMap.get(product);
+                   document.getElementById('result').innerHTML="Your bill amount is :"+amt;
+                break;
+                case 'gro' :
+                    amt=parseInt(groceryMap.get(product))*parseInt(document.getElementById('quant').value);
+                   document.getElementById('price').value=groceryMap.get(product);
+                   document.getElementById('result').innerHTML="Your bill amount is :"+amt;                
+                break;
+            }*/
+            }
+            function hi(){
+                // document.getElementById('un').innerHTML=" ";
+                switch(document.getElementById('cat').value){
+                case 'ele' : 
+                document.getElementById('price').value=electronicMap.get(document.getElementById('un').value);
+                break;
+                case 'sta' : 
+                document.getElementById('price').value=stationaryMap.get(document.getElementById('un').value);
+                break;
+                case 'gro' :
+                document.getElementById('price').value=groceryMap.get(document.getElementById('un').value);
+                break;
+            }
+            }
+            function res(){
+                document.getElementById('result').innerHTML=" ";
+            }
+            function Ccart(){
+                sessionStorage.setItem("totalbillamt", 0);
+            }
+        </script>
+</body>
+</html> 

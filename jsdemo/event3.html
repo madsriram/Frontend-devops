@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <h1 id="hd">First Heading-1</h1>
+    <h1 id="d">Second Heading-1</h1>
+    <form>
+        Enter Your Name : <input type="text" name="Username" id="txtUser">
+        <input type="button" value="Change Heading" onclick="ChangeText()">
+        <input type="button" value="Get Text" onclick="getValue()">
+    </form>
+    <script>
+        function ChangeText(){
+            alert(document.getElementById('txtUser').value);
+            document.getElementById('hd').innerHTML="New Heading-1";
+            // document.getElementById('hd').style.color='red';            
+            var hdrs=document.getElementsByTagName('h1');
+            for(var i=0;i<hdrs.length;i++){
+                hdrs[i].style.color='red';
+            }
+        }
+        function getValue(){
+            alert("Text value: "+document.getElementById('txtUser').value);
+            document.getElementById('txtUser').value='Guest';
+        }
+    </script>
+
+</body>
+</html>

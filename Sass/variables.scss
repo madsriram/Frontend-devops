@@ -1,0 +1,19 @@
+$myFont: Helvetica, sans-serif;
+$myColor: #0011ff;
+$myFontsize: 30px;
+$myWidth: 680px;
+$myWeight: bolder;
+
+h1{
+    $myColor:green;
+    color: $myColor;
+}
+body{
+    font-family: $myFont;
+    font-size: $myFontsize;
+    color: $myColor;
+    font-weight: $myWeight;
+}
+#container{
+    width: $myWidth;
+}

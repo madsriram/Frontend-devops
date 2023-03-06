@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <u><h3>Sign-in/Sign-up Form</h3></u>
+    <form action="" method="get">
+        Username : <input type="text" name="Username" id="un"><p>
+        Password : <input type="password" name="Password" id="pwd"><p>
+            <input type="button" value="Sign-in" onclick="signin()">
+                <input type="button" value="Sign-up" onclick="signup()">
+    </form>
+    <script>
+        function signup(){            
+            var uname=document.getElementById("un").value;
+            var pass=document.getElementById("pwd").value;
+            // sessionStorage.setItem("firstname",fname);
+            localStorage.setItem("Username",uname);
+            localStorage.setItem("Password",pass);
+            // alert("Data stored in sessionStorage");
+            alert("Sign-up success...!");
+        }
+        function signin(){
+            var uname=localStorage.getItem("Username");
+            var pass=localStorage.getItem("Password");
+            if(uname==document.getElementById("un").value){
+                if(pass==document.getElementById("pwd").value)
+                alert("Sign-in success...!");
+                else
+                alert("Password INCORRECT!");
+            }
+            else
+            alert("UserName INVALID...!");
+        }
+    </script>
+</body>
+</html>

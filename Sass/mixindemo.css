@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.myArticle {
+  border: solid 2px red;
+}
+
+.muNotes {
+  border: solid 1px black;
+}
+
+#imp {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  font-size: x-large;
+  background-color: yellow;
+}
+
+.container {
+  width: 500px;
+  font-size: large;
+}
+
+.btn-basic, .btn-submit, .btn-report {
+  margin-left: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-report {
+  background-color: orange;
+}
+
+.btn-submit {
+  background-color: #16aeea;
+}
+
+/*# sourceMappingURL=mixindemo.css.map */

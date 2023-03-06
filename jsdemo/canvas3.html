@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--setInteral() allows to execute a task repeatedly at given interval of time-->
+<body onload="setInterval(fillCanvas, 1500)"><!-- 1500 milli seconds=1.5 seconds-->
+    <h2>Image</h2>
+    <div hidden="true">
+        <img id="i1" src="../pic.jpg" alt="nthg" width="400" height="400">
+        <img id="i2" src="../pic2.jpg" alt="nthg" width="400" height="400">
+        <img id="i3" src="../pic3.jpg" alt="nthg" width="400" height="400">
+    </div>
+    <p>Screen - <span id="dt"></span> </p>
+    <canvas id="c" width="400" height="400" style="border:2px solid #000;"></canvas>
+    <script>
+        var k=1;
+        function fillCanvas(){
+            var c=document.getElementById("c");
+            var ctx=c.getContext("2d");
+            var img=document.getElementById("i"+(k++));
+            document.getElementById("dt").innerHTML=k-1;
+            clearCanvas();
+            ctx.drawImage(img, 10,10,380,380);
+            if(k==4)
+            k=1;
+        }
+        function clearCanvas(){
+            var c=document.getElementById("c");
+            var ctx=c.getContext("2d");
+            ctx.clearRect(0,0,400,400);
+        }
+    </script>
+</body>
+</html>

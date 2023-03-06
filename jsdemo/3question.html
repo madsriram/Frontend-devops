@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkSelection(){
+            var ops=document.getElementsByName('option1');
+            var cnt=0,i,k=0;
+            for(i=0;i<ops.length;i++){
+                if(ops[i].checked==true){
+                    k++;
+                    if(ops[i].id=='c1'||ops[i].id=='c3'||ops[i].id=='c5')
+                    cnt++;
+                }
+            }
+            if(k==cnt)
+            document.getElementById('res123').innerHTML="<h3 style='color:green'>Correct Answer";
+            else
+            document.getElementById('res123').innerHTML="<h3 style='color:red'>Wrong Answer";
+            document.getElementById('mtr').value=cnt;
+            document.getElementById('res234').innerHTML=cnt+" out of 3 are correct.."
+        }
+    </script>
+</head>
+<body>
+    <h2>Javascript is a <br>(Select all correct options) </h2>
+    <form name="f2">
+        <input type="checkbox" name="option1" id="c1">Interpreted Language<p></p>
+        <input type="checkbox" name="option1" id="c2">Compiled Language<p></p>
+        <input type="checkbox" name="option1" id="c3">Loosly typed Language<p></p>
+        <input type="checkbox" name="option1" id="c4">Markup Language<p></p>
+        <input type="checkbox" name="option1" id="c5">Object based Language <p></p>
+        <input type="button" onclick="checkSelection()" value="click"><p></p>
+        <span id="res123"></span>
+        <meter id="mtr" value="0" max="3"></meter><p></p>
+        <span id="res234"></span>
+    </form>
+</body>
+</html>

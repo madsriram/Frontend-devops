@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <!--EmpId: <input type="text" name="" id="empid"><p></p>
+        EmpName: <input type="text" name="" id="empname"><p></p>
+        EmpDesig: <input type="text" name="" id="empdesig"><p></p>
+        Salary: <input type="text" name="" id="sal"><p></p>
+        <input type="button" value="Add Emp" onclick="addemp()" -->
+        <input type="button" value="EmpCount" onclick="shownoemp()">
+        <input type="button" value="Employee Details" onclick="showEmpdetails()">
+        <input type="button" value="All Employee Details" onclick="showallEmpdetails()">
+        <input type="button" value="Delete Emp" onclick="delemp()">
+    </form>
+    <h3 id="result"></h3>
+    <script>
+        const emp=[
+            {empID:101,empName:'Smith',desig:'Manager',salary:75000},
+            {empID:102,empName:'John',desig:'trainer',salary:55000},
+            {empID:103,empName:'Mike',desig:'trainee',salary:25000},
+        ];
+        const empMap=new Map([[101,emp[0]],[102,emp[1]],[103,emp[2]]]);
+        function shownoemp(){
+            console.log("Employee Count : "+empMap.size);
+        }
+        function showallEmpdetails(){
+            empMap.forEach((value,key)=>{
+                console.log(value);
+            })
+        }
+        function showEmpdetails(){
+            var eid=parseInt(prompt("enter employee id"));
+            if(empMap.has(eid))
+                console.log(empMap.get(eid));
+            else
+            console.log("Employee Not Found");
+        }
+        function delemp(){
+            var eid=parseInt(prompt("enter employee id"));
+            if(empMap.has(eid)){
+            empMap.delete(eid);
+            console.log("Employee Deleted");
+            }
+            else
+            console.log("Employee Not Found");
+        }
+        /*
+        function addemp(){
+            emp.push("empID:"+document.getElementById('empid').value+",empName:"+document.getElementById('empname').value+",desig:"+document.getElementById('empdesig').value+",salary:"+document.getElementById('sal').value);
+            console.log(emp);
+            /*
+            empMap.set(parseInt(document.getElementById('empid')),[document.getElementById('empid'),
+            document.getElementById('empname'),
+            document.getElementById('empdesig'),
+            document.getElementById('sal')])
+        }*/
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+        function dragStart(ev){
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function dragDrop(ev){
+            ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text")));
+        }
+    </script>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            padding: 5px;
+            border: 2px solid #000;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drag and Drop image into Boxs</h1>
+
+
+    <!-- div class="box" ondrop="dragDrop(event)" ondragover="allowDrop(event)" -->
+        <img id="drag1" src="../pic.jpg" alt="image" draggable="true" ondragstart="dragStart(event)" width="150px" height="150px">
+    <!-- /div --><p></p>
+
+    <div class="box" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+       </div>
+</body>
+</html>

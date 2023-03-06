@@ -1,0 +1,11 @@
+.rounded-borders {
+  border: solid #000;
+  border-radius: 5px;
+}
+#menu {
+  padding: 3px;
+  background-color: red;
+  color: yellow;
+  border: solid #000;
+  border-radius: 5px;
+}

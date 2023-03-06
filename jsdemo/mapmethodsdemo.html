@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const map=new Map();
+       map.set('markup','HTML');
+       map.set('styling','CSS');
+       map.set('scripting','JavaScript');
+       console.log(`map size : ${map.size}`);
+       console.log(`value of styling : ${map.get('styling')}`);
+       
+       for(var i of map.keys()) //only keys
+        console.log(i);
+        for(var i of map.values()) //only values
+        console.log(i);
+        for(var i of map.entries()) //key-value pairs
+        console.log(i);
+        
+       console.log(`has markup : ${map.has('markup')}`);
+       map.delete('markup');
+       console.log(`has markup : ${map.has('markup')}`);
+
+       map.clear();
+       console.log(`map size after clear : ${map.size}`);
+    </script>
+</body>
+</html> 

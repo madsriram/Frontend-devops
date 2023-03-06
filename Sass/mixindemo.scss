@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@mixin important{
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+    font-size: x-large;
+}
+@mixin special-borders($width, $color){
+    border: solid $width $color;
+}
+.myArticle{
+    @include special-borders(2px, red)
+}
+.muNotes{
+    @include special-borders(1px, black)
+}
+#imp{
+    @include important;
+    background-color: yellow;
+}
+.container{
+    width: 500px;
+    font-size: large;
+}
+.btn-basic{
+    margin-left: 10px;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn-report{
+    @extend .btn-basic;
+    background-color: orange;
+}
+.btn-submit{
+    @extend .btn-basic;
+    background-color: #16aeea;    
+}

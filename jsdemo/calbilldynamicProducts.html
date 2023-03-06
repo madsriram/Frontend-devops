@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getProduct()">
+    
+    <center>
+        <form name="sform">
+            Product  <select id="un" onchange="hi()">
+                <option value=-1>Select</option>
+            </select><p></p>
+            Price <input type="text" id="price" readonly><p></p>
+            Quantity <input type="text" name="" id="quant"><p></p>
+            <input type="button" value="Generate Bill" onclick="bill()">
+            <input type="reset" value="Clear" onclick="res()">
+        </form>
+        <div id="result"></div>
+        </center>
+        <script>
+            const productMap=new Map();
+            productMap.set('laptop', '42000');
+            productMap.set('mobile', '22000');
+            productMap.set('bag', '2000');
+            productMap.set('machine', '8000');
+            
+            function bill(){
+                var amt;
+                if(productMap.has(document.getElementById('un').value)){
+                   amt=parseInt(productMap.get(document.getElementById('un').value))*parseInt(document.getElementById('quant').value);
+                   document.getElementById('price').value=productMap.get(document.getElementById('un').value);
+                   document.getElementById('result').innerHTML="Your bill amount is :"+amt;
+                }
+                else{
+                document.getElementById('result').innerHTML="Please Select the product";
+                }
+            }
+            function hi(){
+                document.getElementById('price').value=productMap.get(document.getElementById('un').value);
+            }
+            function getProduct(){
+                for(var pname of productMap.keys()){
+                    var option=document.createElement('option');
+                    option.text=pname;
+                    document.getElementById('un').add(option);
+                }
+            }
+            function res(){
+                document.getElementById('result').innerHTML=" ";
+            }
+        </script>
+</body>
+</html> 

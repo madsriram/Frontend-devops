@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        var arr=["hello","world"];
+        var [a1,a2]=arr;
+        document.write(a1+" ");
+        document.write(a2+" ");
+        */
+
+        /*
+        var emp={empno:"1001",name:"William",desig:"Manager"};
+        var {empno,name,desig}=emp;
+        document.write(`<h1><p>EmpID: ${empno}`);
+        document.write(`<p>Name: ${name}`);
+        document.write(`<p>Desig: ${desig}</h1>`);
+            */
+
+        /*
+        function showvals(x, ...vals){
+            document.write(`<h2>${x}</h2> <br>`);
+            for(var val of vals){
+                document.write(`${val}<br>`);
+            }
+        }
+        showvals("Smith",86,76,23);
+        showvals("John",56,43,32,78);
+        showvals("Mark",93,46,83,76,56);
+        */
+
+        /*
+        function addNums(...vals){
+            var sum=0;
+            for(var val of vals){
+                sum=sum+val;
+            }
+            document.write(`Sum : ${sum} <br>`);
+        }
+        addNums(1,2);
+        addNums(1,2,3);
+        addNums(1,2,3,4);
+        addNums(1,2,3,4,5);
+        addNums(1,2,3,4,5,6);
+        */
+
+        /* 
+        let a1=[10,20,30];
+        let a2=[40,30,50];
+        let ma=[...a1,...a2];
+        for(var e of ma){
+            document.write(`${e}  `);   //merging two arrays
+        }
+        document.write(`<p>`);
+        let ca=[...ma, 70,80,90,100];
+        for(var v of ca){
+            document.write(`${v}  `);   //copying  elements of ma into ca
+        }
+        */
+
+        /*
+        function addNums(x, y=10){
+            return x+y;
+        }
+        document.write(`${addNums(1,2)}<br>`);
+        document.write(`${addNums(7)}`);
+        */
+
+        // Arrow function
+
+        /*
+        let greet= (user) =>console.log("Hello..! "+user);
+        greet('Sriram');
+        */
+
+        /*
+        let addNums=(a,b)=>a+b;
+        let subNums=(a,b)=>a-b;
+        let mulNums=(a,b)=>a*b;
+        let divNums=(a,b)=>a/b;
+        document.write(addNums(4,2)+"<br>");
+        document.write(subNums(4,2)+"<br>");
+        document.write(mulNums(4,2)+"<br>");
+        document.write(divNums(4,2)+"<br>");
+        */
+
+        //forEach
+
+        /*
+        const ageMap=new Map([['simth',26],['mike',16],['mark',28],['Josh',30]]);
+        ageMap.forEach((value,key)=>{document.write(`${key} is ${value} years old <br>`);})
+        console.log(ageMap.keys());
+        console.log(ageMap.values());
+        console.log(ageMap.entries());
+        */
+
+        /*
+        
+        //convert Object to Map (Object.entries())
+        const address={
+            'tapas': 'Bangalore',
+            'James': 'Huston',
+            'Selva': 'Sri lanka'
+        }
+        const addressMap=new Map(Object.entries(address));
+        console.log(addressMap.entries());
+        //convert mao to Object (Object.fromEntries())
+        console.log(Object.fromEntries(addressMap));
+        //convert map into an Array (Array.from())
+        const map=new Map();
+        map.set('milk',40);
+        map.set('tea', 20);
+        map.set('coffee',50);
+        console.log(Array.from(map));
+        //convert array of objects to Map
+        const emp=[
+            {empID:'101',empName:'Smith'},
+            {empID:'102',empName:'John'},
+            {empID:'103',empName:'Mike'},
+        ];
+        const empMap=new Map(emp.map((obj)=>[obj.empID, obj.empName]));
+        console.log(empMap);
+        */
+
+        const emp=[
+            {empID:'101',empName:'Smith',desig:'Manager',salary:75000},
+            {empID:'102',empName:'John',desig:'trainer',salary:55000},
+            {empID:'103',empName:'Mike',desig:'trainee',salary:25000},
+        ];
+        const empMap=new Map(emp.map((obj)=>[obj.empID,[obj.empID,obj.empName,obj.desig,obj.salary]]));
+        console.log(empMap);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        //sample
+        /*
+         var courses=["HTML", "CSS", "JavaScript"];       
+       for(var i=0;i<courses.length;i++){
+        document.write(`${i+1} . ${courses[i]} has ${courses[i].length} chars <br>`)
+       }
+       */
+       //functions
+
+       document.write("Actual : "+courses);
+       courses.push("SQL");
+       document.write("<p>Add elements at end: " +courses);
+        courses.unshift("Fundamentals");
+       document.write("<p>Add elements at begining: " +courses);
+        document.write("<p>Removed from last " +courses.pop());
+        document.write("<p>After pop: " +courses);
+        document.write("<p>Removed from first: " +courses.shift());
+        document.write("<p>After shift: " +courses);
+        document.write("<p>Reversed: " +courses.reverse());
+        document.write("<p>Sorted: " +courses.sort());
+    </Script>
+</body>
+</html>

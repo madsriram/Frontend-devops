@@ -1,0 +1,1 @@
+document.write("Hello Guest, Welcome to the Javascript, external javascript file");

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <h1 id="hd">First Heading-1</h1>
+    <h1 id="d">Second Heading-1</h1>
+    <form>
+        Num-1 : <input type="text" name="Username" id="num1"><p></p>
+        Num-2 : <input type="text" name="Username" id="num2"><p></p>
+        Result : <input type="text" name="Username" id="result" readonly><p></p>
+        <input type="button" value="+" onclick="addnums()">
+        <input type="button" value="-" onclick="subnums()">
+        <input type="button" value="*" onclick="mulnums()">
+        <input type="button" value="/" onclick="divnums()">
+    </form>
+    <script>
+        function addnums(){
+            document.getElementById('result').value=parseInt(document.getElementById('num1').value)+parseInt(document.getElementById('num2').value);
+        }
+        function subnums(){
+            document.getElementById('result').value=parseInt(document.getElementById('num1').value)-parseInt(document.getElementById('num2').value);
+        }
+        function mulnums(){
+            document.getElementById('result').value=parseInt(document.getElementById('num1').value)*parseInt(document.getElementById('num2').value);
+        }
+        function divnums(){
+            document.getElementById('result').value=parseInt(document.getElementById('num1').value)/parseInt(document.getElementById('num2').value);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Asnychronous JavaScript</h1>
+    <h1>Call Back</h1>
+    <h3>The result of the calculation is: <span id="res"></span></h3>
+    <script>
+        function display(result){
+            document.getElementById('res').innerHTML=result;
+        }
+        function addNums(num1, num2, simpleCallback){
+            let sum=num1+num2;
+            simpleCallback(sum);
+        }
+        addNums(10,5,display);
+    </script>
+</body>
+</html>
