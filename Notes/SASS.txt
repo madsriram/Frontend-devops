@@ -1,0 +1,767 @@
+			SASS
+
+
+Syntactically Awesome Style Sheet
+
+is a CSS pre-processor
+
+Pre-processor is a program that processes input data to produce output that is used as input in another program
+
+Sass reduces repetition of CSS code and therefore saves time
+
+Sass lets you use features that do not exist in CSS, like variables, mixins, imports, inheritance, nested rules, built-in functions etc
+
+Let's say we have a website with three main colors:
+
+#a2b9bc
+#b2ad7f
+#878f99
+
+So, how many times do you need to type those HEX values? A LOT of times. And what about variations of the same colors?
+
+Instead of typing these HEX values a lot of times, you can use Sass and write this:
+
+/* define variables for the primary colors */
+
+$primary_1: #a2b9bc;
+$primary_2: #b2ad7f;
+$primary_3: #878f99;
+
+/* use the variables */
+
+.main-header {
+  background-color: $primary_1;
+}
+
+.menu-left {
+  background-color: $primary_2;
+}
+
+.menu-right {
+  background-color: $primary_3;
+}
+
+in case any change is required in the primary color, you only need to change it in one place & it will reflect whereever it is used
+
+A browser does not understand Sass code
+
+it need to be converted into standard CSS code
+
+This process is called transpiling
+
+Transpiling is a term for taking a source code written in one language and transform/translate it into another language
+
+Transpiler (source code to source code compiler)
+
+here sass source code to css source code
+
+Sass files has the ".scss" file extension
+
+Sass supports standard CSS comments /* comment */ 
+
+and in addition it supports inline comments // comment
+
+
+Setup:
+
+
+Download Node.js from https://nodejs.org/en/download/ & Install it
+
+after installation, open command prompt & verify node version
+
+C:\> node -v
+
+C:\> npm -v
+
+npm is a Node Package Manager
+
+which allows to download required packages & installing etc
+
+
+Installing Sass globally
+
+	npm install sass -g
+
+
+
+
+create .scss files & transpile to .css files
+
+
+Sass Variables
+
+Variables are a way to store information that you can re-use later.
+
+With Sass, you can store information in variables, like:
+
+strings
+numbers
+colors
+booleans
+lists
+nulls
+
+Sass uses the $ symbol, followed by a name, to declare variables:
+
+Sass Variable Syntax:
+
+$variablename: value;
+
+E.g.,
+
+$a:10;
+
+
+variables.scss
+
+$myFont: Helvetica, sans-serif;
+$myColor: red;
+$myFontSize: 18px;
+$myWidth: 680px;
+
+body {
+  font-family: $myFont;
+  font-size: $myFontSize;
+  color: $myColor;
+}
+
+#container {
+  width: $myWidth;
+}
+
+
+Transpiling:
+
+	sass variables.scss variables.css
+
+
+
+CSS Output: variables.css
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#container {
+  width: 680px;
+}
+
+Linking css with html
+
+variables.html
+
+<!Doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="variables.css">
+  </head>
+  <body>
+     <h1>SASS to CSS</h1>
+  </body>
+</html>
+
+
+
+To tell Sass to watch the file and update the CSS file every time Sass file changes:
+
+
+Syntax:
+
+	sass --watch filename.scss:filename.css 
+
+E.g.,
+
+	sass --watch variables.scss:variables.css 
+
+
+
+
+Sass Variable Scope
+
+Sass variables are only available at the level of nesting where they are defined
+
+$myColor: red;
+
+h1 {
+  $myColor: green;
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}
+
+$myColor: green; is inside the <h1> rule, and will only be available there
+
+<p> will be red
+
+$myColor: red;
+
+h1 {
+  $myColor: green !global;
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}
+
+!global indicates that a variable is global, which means that it is accessible on all levels
+
+Now the color of the text inside a <p> tag will be green
+
+Global variables should be defined outside any rules
+
+It could be wise to define all global variables in its own file, named "_globals.scss", and include the file
+
+
+
+Partials
+
+another awesome feature of Sass is that it allows to break the stylesheets into smaller chunks
+
+helps to organize and structure your code
+
+To declare a partial, we will start the file name with an underscore _, and add it in another Sass file using the @import directive
+
+For example, if we have a _globals.scss, _variables.scss, and _buttons.scss, we could import them into the main SCSS file main.scss
+
+The _ (underscore) is a partial for scss. That means the stylesheet its going to be imported (@import) to a main stylesheet 
+
+
+main.scss
+
+@import "globals";
+@import "variables";
+@import "buttons";
+
+
+here underscore and the .scss are not added as Sass automatically assumes that you are referring to the sass file
+
+
+
+Mixins
+
+
+Mixins allow you to define styles that can be re-used throughout your stylesheet
+
+Mixins allow you to encapsulate a group of styles, and apply those styles anywhere in your code using the @include directive
+
+
+Defining a Mixin
+
+	A mixin is defined with the @mixin directive
+
+
+The @mixin directive lets you create CSS code that is to be reused throughout the website
+
+
+Sass @mixin Syntax:
+
+@mixin name {
+  property: value;
+  property: value;
+  ...
+}
+
+
+
+E.g:  mixin.scss
+
+@mixin important-text {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+
+
+Using a Mixin
+
+The @include directive is used to include a mixin.
+
+Sass @include mixin Syntax:
+
+selector {
+  @include mixin-name;
+}
+
+
+including the important-text mixin created above
+
+.danger {
+  @include important-text;
+  background-color: green;
+}
+
+sass mixin.scss mixin.css
+
+The Sass transpiler will convert the above to normal CSS:
+
+CSS output:
+
+.danger {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+  background-color: green;
+}
+
+mixin.html
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="mixin.css">
+<body>
+
+<h1>Hello World</h1>
+
+<h1 class="danger">Warning!</h2>
+
+</body>
+</html>        
+
+
+
+
+A mixin can also include other mixins
+
+Creating a new mixin called special-text which includes other mixins
+
+SCSS Syntax:
+
+@mixin special-text {	   
+  @include important-text;
+  @include link;
+  @include special-border;
+}
+
+Passing Variables to a Mixin
+
+Mixins accept arguments
+
+SCSS Syntax:
+
+/* Defining a mixin with two arguments */
+
+@mixin bordered($color, $width) {  
+  border: $width solid $color;
+}
+
+.myArticle {
+  @include bordered(blue, 1px);  // Calling mixin with two values 
+}
+
+.myNotes {
+  @include bordered(red, 2px);  // Calling mixin with two values 
+}
+
+	sass mixin.scss mixin.css
+
+in .html
+
+    <body>
+	<div class="myArticle">Some Article</div>
+	<div class="myNotes">Some Notes</div>
+    </body>
+
+
+Default Values for a Mixin
+
+It is also possible to define default values for mixin variables
+
+SCSS Syntax:
+
+@mixin bordered($color: blue, $width: 1px) {
+  border: $width solid $color;
+}
+
+Then, you only need to specify the values that change when you include the mixin:
+
+SCSS Syntax:
+
+.myTips {
+  @include bordered($color: orange);
+}
+
+
+
+
+@mixin flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background: #ccc;
+}
+
+.card {
+  @include flex-container;
+}
+
+.aside {
+  @include flex-container;
+}
+
+
+
+
+Sass Importing Files
+
+Just like CSS, Sass also supports the @import directive.
+
+The @import directive allows you to include the content of one file in another
+
+The CSS @import directive has a major drawback due to performance issues; it creates an extra HTTP request each time you call it. 
+
+However, the Sass @import directive includes the file in the CSS; so no extra HTTP call is required at runtime
+
+
+
+Sass @extend Directive
+
+The @extend directive lets you share a set of CSS properties from one selector to another.
+
+The @extend directive is useful if you have almost identically styled elements that only differ in some small details
+
+
+.button-basic  {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report  {
+  @extend .button-basic;
+  background-color: red;
+}
+
+.button-submit  {
+  @extend .button-basic;
+  background-color: green;
+  color: white;
+}
+
+Transpiling
+
+	sass btdemo.scss btdemo.css
+
+.html
+	<link href="btdemo.css">
+	
+	<body>
+	   <input type="button" class="button-submit" value="Register">
+	</body>
+
+
+
+
+
+
+
+
+Media queries
+
+is a feature of CSS 3 allowing content rendering to adapt to different conditions such as screen resolution
+
+Media queries are a key part of responsive web design
+
+they allow to create different layouts depending on the size of the viewport
+
+
+CSS Media Queries
+
+h1 {
+  font-size: 26px;
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+
+
+
+Sass Media Queries
+
+@media directive is used to set style rules to different media types
+
+With Sass, it is possible to nest a media query directly within the CSS rule
+
+h1 {
+  font-size: 26px;
+
+  @media (max-width: 900px) {
+    font-size: 24px;
+  }
+}
+
+
+
+Mixins allows us to define the media query in one location and apply it around the codebase wherever it is needed
+
+ @mixin respond-medium {
+    @media (max-width: 900px) { @content }
+  }
+
+The content directive – @content – allows us to pass a block of code into the mixin. Once the mixin is set up, we can apply it:
+
+h1 {
+  font-size: 26px;
+
+  @include respond-medium {
+    font-size: 24px;
+  }
+}
+
+
+Multiple media queries
+
+@mixin respond($breakpoint) {
+    @if($breakpoint == medium)  {
+      @media (max-width: 900px) { @content }
+    }
+    @if($breakpoint == small)  {
+      @media (max-width: 600px) { @content }
+    }
+  }
+
+Depending upon what is passed in for breakpoint variable (medium or small), the correct media query is set
+
+With this we can easily apply multiple media queries
+
+h1 {
+  font-size: 26px;
+  @include respond(medium) {
+     font-size: 24px;
+   }
+  @include respond(small) {
+     font-size: 20px;
+   }
+}
+
+
+ensures that the h1 font-size, normally 26px, 
+
+would be 24px in viewports less than 900px wide and 
+
+20px in viewports less than 600px wide
+
+
+
+Sass Operators
+
+== and != are used to check if two values are the same
+
++, -, *, /, and % 
+
+<, <=, >, and >= check whether two numbers are greater or less than one another
+
+and, or, and not have the boolean behavior
+
+
+Control Structures
+
+$ch: r;  
+p {  
+  @if $ch == r {  
+    color: red;  
+  } @else if $ch == g {  
+    color: green;  
+  } @else if $ch == b {  
+    color: blue;  
+  } @else {  
+    color: black;  
+  }  
+}     
+
+
+
+
+
+@for $i from 1 through 4 {  			// i <= 4
+  .p#{$i} { padding-left : $i * 10px; }  
+}  
+
+after transpilation the generated css code will be as follows
+
+.p1 {
+     padding-left : 10px; 
+}
+.p2 {
+     padding-left : 20px; 
+}
+.p3 {
+     padding-left : 30px; 
+}
+.p4 {
+     padding-left : 40px; 
+}
+
+
+
+@for $i from 1 to 4 {  				// i < 4
+  .p#{$i} { padding-left : $i * 10px; }  
+} 
+
+
+
+
+
+
+
+
+var i = 100;
+while(i > 0) {
+  - - -
+  i = i - 20;
+}
+
+
+$i: 100;  
+@while $i > 0 {  
+  .paddding-#{$i} { padding-left: 1px * $i; }  
+  $i: $i - 20;  
+}
+
+
+
+
+@each directive contains the value of each item in the list
+
+Syntax:
+
+@each $var in <list or map>   
+
+E.g.,
+
+@each $color in pink, violet, yellow, blue {  
+  .p_#{$color} {  
+    background-color: #{$color};  
+  }  
+}
+
+after transpilation the generated css code will be as follows
+
+.p_pink {
+    background-color: pink;  
+  }
+.p_voilet {
+    background-color: voilet;  
+  }
+.p_yellow {
+    background-color: yellow;  
+  }
+.p_blue {
+    background-color: blue;  
+  }
+
+
+
+
+
+Functions:
+
+@function addNums($a, $b) {
+   $c: $a + $b;
+   @return $c;
+}
+   
+.sidebar {
+  float: left;
+  margin-left: addNums(2, 3) * 1px;
+}
+
+
+
+
+Sass Built-in functions
+
+Math functions
+
+percentage($number)		percentage(3.5)		 350
+(Multiplies number by 100)
+
+round($number)			round(5.25)		5
+
+ceil($number)			ceil(5.25)		6
+
+floor($number)			floor(3.75)		3
+
+abs($number)			abs(-8)			8
+
+min($numbers)			min(3,5,-8,1,0)		-8
+
+max($numbers)			max(3,5,-8,16,0)	16
+
+random()			random value betweem 0 and 1	
+
+
+
+String Functions
+
+
+unquote("hello")			Result: hello
+
+quote(hello)				Result: "hello"
+
+str-length("hello")			Result: 5
+
+str-insert(" world","hello",0)		Result: "hello world"
+
+str-index("Hello","H")			Result: 1
+
+str-index("hello","H")			Result: null
+
+to-upper-case("hello")			Result: "HELLO"
+
+to-lower-case("Hello")			Result: "hello"
+
+
+
+
+
+
+
+Sass Nested Rules
+
+Sass lets you nest CSS selectors in the same way as HTML
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+CSS Syntax:
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+

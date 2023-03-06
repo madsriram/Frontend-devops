@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            min-height: 100vh;
+            flex-direction: row;
+            margin: 0;
+        }
+        .col-1{
+            background: #add8e6;
+            flex: 1;
+        }
+        .col-1:nth-child(3){
+            background: #ffa500;
+        }
+        .col-1:nth-child(4){
+            background: #ff002f;
+        }
+        .col-2{
+            display:flex;
+            flex-direction: column;
+            flex: 5;
+        }
+        .content{
+            display: flex;
+            flex-direction: row;
+        }
+        .content > article{
+            flex: 4;
+            min-height: 60vh;
+        }
+        header, footer{
+            background: #9acd32;
+            height: 20vh;
+        }
+        header, footer, article, nav{
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="col-1">Nav</nav>
+    <div class="col-2">
+        <header>Header</header>
+        <main class="content">
+            <article>Article <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam autem corrupti et dolores ipsa. Repellat eveniet recusandae provident obcaecati quasi totam, architecto nulla omnis, vitae harum a ratione beatae.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo accusantium natus laboriosam aspernatur in laudantium beatae ipsa reiciendis possimus a minus, veritatis amet magnam earum saepe officia animi. Quibusdam, nemo.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto animi, vitae numquam dolorum mollitia consectetur deserunt quas ad nostrum voluptatem molestiae nesciunt alias molestias doloribus voluptatibus quod quis magnam ipsa.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint reprehenderit nisi cumque ex, expedita nobis aliquid quisquam doloribus nam impedit. Voluptatibus ipsa, eligendi id sunt modi quasi nemo voluptate aliquid!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam autem corrupti et dolores ipsa. Repellat eveniet recusandae provident obcaecati quasi totam, architecto nulla omnis, vitae harum a ratione beatae.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo accusantium natus laboriosam aspernatur in laudantium beatae ipsa reiciendis possimus a minus, veritatis amet magnam earum saepe officia animi. Quibusdam, nemo.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto animi, vitae numquam dolorum mollitia consectetur deserunt quas ad nostrum voluptatem molestiae nesciunt alias molestias doloribus voluptatibus quod quis magnam ipsa.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint reprehenderit nisi cumque ex, expedita nobis aliquid quisquam doloribus nam impedit. Voluptatibus ipsa, eligendi id sunt modi quasi nemo voluptate aliquid!
+            </article>
+        </main>
+        <footer>Footer</footer>
+    </div>
+    <nav class="col-1">Nav</nav>
+    <nav class="col-1">Nav</nav>
+</body>
+</html>

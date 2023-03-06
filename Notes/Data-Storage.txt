@@ -1,0 +1,94 @@
+Web Storage
+
+allows web applications to store data locally within the user's browser.
+
+Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance
+
+HTML5 web storage provides two objects for storing data on the client:
+
+(1) window.sessionStorage
+
+ - stores data for one session 
+
+i.e., data is lost when the browser tab is closed
+
+
+(2) window.localStorage
+
+ - stores data with no expiration date
+
+i.e., data will not be deleted when the browser is closed
+
+and will be available the next day, week, or year
+
+
+
+
+
+check browser support for sessionStorage and localStorage:
+
+if (typeof(Storage) !== "undefined") {
+  // Code for localStorage/sessionStorage.
+} else {
+  // Sorry! No Web Storage support..
+}
+
+
+sessionStorage operations:
+
+sessionStorage.setItem("key","myvalue");
+
+sessionStorage.getItem("key");
+
+sessionStorage.removeItem("key");
+
+sessionStorage.clear();
+
+localStorage operations:
+
+localStorage.setItem("key","value");
+
+localStorage.getItem("key");
+
+localStorage.removeItem("key");
+
+localStorage.clear();
+
+
+
+
+
+
+
+
+
+var ourArray =[1,2,3,4,5];
+
+localStorage.setItem("ourarraykey",JSON.stringify(ourArray));
+
+var storedArray = localStorage.getItem("ourarraykey");
+ourArray = JSON.parse(storedArray);
+
+sessionStorage.setItem("ourarraykey",JSON.stringify(ourArray));
+
+var storedArray = sessionStorage.getItem("ourarraykey");
+ourArray = JSON.parse(storedArray);
+
+
+
+
+
+JSON.parse()
+
+	converts JSON strings into JavaScript objects
+
+JSON.stringify()
+
+	converts an object into a JSON string
+
+
+
+
+
+
+

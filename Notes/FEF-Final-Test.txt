@@ -1,0 +1,109 @@
+
+
+
+			FEF Final Test
+
+
+1. ________ maintains a separate storage area for each given origin that's available for the duration of the page
+
+A. pageStorage
+B. localStorage	
+C. sessionStorage   
+D. storagearea
+
+2. Canvas method used to get the element's context is _______
+
+A. elementContext()
+B. getContext()
+C. getElementContext()
+D. context()
+
+3. ____________ canvas method allows to draw a rectangle on the page
+
+A. fillRect(x1, y1, x2, y2)
+B. drawRect(x1, y1, x2, y2)
+C. fillRectangle(x1, y1, x2, y2)
+D. drawRectangle(x1, y1, x2, y2)
+
+4. The <map> element contains multiple _________ elements, that defines the clickable sections in the image map
+
+A. <section>
+B. <area>
+C. <mark>
+D. <location>
+
+5. _________ attribute helps users complete forms based on earlier input
+
+A. autofill
+B. autosave
+C. autofocus
+D. autocomplete
+
+6) What is the correct way to define a variable in SASS?
+
+A. $primary-color: #8888
+B. @primary-color: #8888
+C. %primary-color: #8888
+D. #primary-color: #8888
+
+7. Which sass directive allows you to include the content of one file in another?
+
+A. @include
+B. @define
+C. @import
+D. @content
+
+8. Which directive is used to create CSS code that is to be reused throughout the website?
+
+A. @import
+B. @mixin
+C. @define
+D. @extend
+
+9.  Which directive is used to share a set of CSS properties from one selector to another?
+
+A. @share
+B. @import
+C. @transfer
+D. @extend
+
+10. JSON names (keys) must be strings
+
+A. true
+B. false
+
+11. Which is the correct example of a JSON object with name, age, and city?
+
+A. { "record"={"name":"Alex", "age":21, "city":"London"} }
+B. { "record":{"name":Alex, "age":21, "city":London} }
+C. { record :{"name":"Alex", "age":21, "city":"London"} }
+D. { "record":{"name":"Alex", "age":21, "city":"London"} }
+
+12. Which of these is an example of a proper JSON array?
+
+A. { students:["Alex", "Alvin", "Bobby"] }
+B. { students=["Alex", "Alvin", "Bobby"] }
+C. { "students":["Alex", "Alvin", "Bobby"] }
+D. { "students":[{"Alex", "Alvin", "Bobby"]} }
+
+13. Which function is used to convert text into a JavaScript object?
+
+A. JSON.stringify()
+B. JSON.parse()
+C. object.parse()
+D. string.parse()
+
+14. A common use of JSON is ________
+
+A. to update data into the database
+B. to retrieve data from the database
+C. to exchange data to/from a web server
+D. to describe data
+
+15. In the JSON syntax, data is in ____ pairs
+
+A. key/value
+B. name/value
+C. variable/value
+D. class/object
+

@@ -1,0 +1,103 @@
+JSON
+
+JavaScript Object Notation 
+
+is a schema-less, text-based representation of structured data that is based on key-value pairs and ordered lists. 
+
+used to exchange data between web clients/mobile clients and web servers/back-end services
+
+Easy for humans to read and write
+
+Easy for machines to parse and generate
+
+JSON is a text format
+
+is a generic data format with a minimal number of value types: strings, numbers, booleans, lists, objects, and null
+
+Programming language independent
+
+
+
+
+
+
+
+JSON Object
+
+A JSON object contains data in the form of key/value pair.
+
+The keys are strings and the values are the JSON types
+
+Keys and values are separated by colon. 
+
+Each entry (key/value pair) is separated by comma.
+
+The { (curly brace) represents the JSON object.
+
+{  
+    "employee": {  
+        "name":       "Smith",   
+        "salary":      25000   
+    }  
+}  
+
+in XML
+
+<employee>
+    <name>Smith</name>
+    <salary>25000</salary>
+</employee>
+
+
+
+
+
+
+
+
+
+JSON Array
+
+The [ (square bracket) represents the JSON array
+
+
+JSON array having values
+
+["Java SE", "Java EE", "Struts", "Spring", "Hibernate"]  
+
+
+JSON array having objects
+
+[  
+    {"name":"Smith", "email":"smith@gmail.com"},  
+    {"name":"John", "email":"john@gmail.com"}  
+]  
+
+
+
+
+JSON
+
+{"employees":[  
+    {"name":"Smith", "email":"smith@gmail.com"},  
+    {"name":"John", "email":"john@gmail.com"},  
+    {"name":"Mike", "email":"mike@gmail.com"}  
+]}  
+
+XML
+
+<employees>  
+    <employee>  
+        <name>Smith</name>          
+        <email>smith@gmail.com</email>  
+    </employee>  
+    <employee>  
+        <name>John</name>   
+        <email>john@gmail.com</email>  
+    </employee>  
+    <employee>  
+        <name>Mike</name>   
+        <email>mike@gmail.com</email>  
+    </employee>  
+</employees> 
+

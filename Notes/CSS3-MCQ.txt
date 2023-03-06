@@ -1,0 +1,128 @@
+
+
+
+			CSS3 - MCQ Test
+
+
+1. The CSS box model consists of ________
+
+A. margins     B. borders      C. padding       D. content 	E. All
+
+2. The ____________ property is a shorthand property for setting all the  column rule properties in one line
+
+A. column-rules		B. column-rules-all	C. column-rule	D. None
+
+3. What two Flexbox properties does the flex-flow property substitute?
+
+A. flex-direction & flex-wrap	B. flex-grow & flex-shrink
+C. flex-direction & flex-align	D. flex-order & flex-align
+
+4. When using Flexbox, how do you call an element that manages layout of its children elements?
+
+A. flex-child	B. flex-parent	C. flex-container    D. flex-children
+
+5. Using Flexbox, what CSS rule will you use to make flex items evenly distributed in a horizontal flow with no extra space before the first item and after the last one
+
+A. justify-content: space-between	B. justify-content: space-around
+C. justify-content: start		D. justify-content: center
+
+6. What CSS rule is used to change the flow of flex container items to "from top to bottom" when text of the document flows from left to right?
+
+A. flex-direction: vertical	B. flex-direction: top-down	
+C. flex-direction: column	D. flex-direction: row
+
+7. Using Flexbox, how do you make the flex items stay on one line?
+
+A. flex-wrap: oneline		B. flex-wrap: nowrap	
+C. flex-wrap: noline		D. flex-wrap: nobreak
+
+8. What CSS rule do you use to turn a document element into a flex container?
+
+A. display: flexbox		B. display: container	
+C. display: block		D. display: flex
+
+9. What is a default value of the Flexbox property flex-direction?
+
+A. flex-direction: row-reverse		B. flex-direction: column	
+C. flex-direction: column-reverse	D. flex-direction: row
+
+10. What Flexbox property do you use to define how flex items will be wrapped?
+
+A. wrap-items	 B. break-items	  C. flex-wrap	  D. flex-break
+
+11. Animations with the ________ timing function start fast and slow down towards the end
+
+A. ease-out 	B. ease-in	C. ease		D. linear
+
+12. Animations with the ________ timing function start slow and speed up towards the end
+
+A. ease-out 	B. ease-in	C. ease		D. linear
+
+13. Animations with the ________ timing function start slowly, speed up in middle, and then end slowly
+
+A. ease-out 	B. ease-in	C. ease		D. linear
+
+14. __________ is the default timing function used if no timing function is added to the animation
+
+A. ease-out 	B. ease-in	C. ease		D. linear
+
+15. ___________ CSS function defines a transformation that resizes an element on the 2D plane
+
+A. scale()	B. resize()	C. transform()	D. size()
+
+16. ___________ CSS property lets you rotate, scale, skew, or translate an element
+
+A. transform	B. change	C. modify	D. alter
+
+17. ARIA stands for _________
+
+A. Accessibility Rich Internet Applications	
+B. Access Rich Internet Applications
+C. Accessible Rich Internet Applications
+D. Accessible Rich Intranet Applications
+
+18. __________ attribute informs the browser about an element
+
+A. value	B. property	C. state	D. role
+
+19. Fill up the blank
+
+<meta name="viewport" content="________________, initial-scale=1.0">
+
+A. width-device-width		B. device-width=width
+C. width=device-width		D. width=device_width
+
+20. By default, a background-image is repeated
+
+A. vertically				B. horizontally
+C. both vertically and horizontally	D. None
+
+21. Select correct option which sets two background images for the <body> element
+
+body {
+  _____________________________________________
+}
+
+A. background-image: url("img_tree.gif"), url("paper.gif");
+B. background-image: url("img_tree.gif", "paper.gif");
+C. background-image: url("img_tree.gif")  url("paper.gif");
+D. background-image: url("img_tree.gif") + url("paper.gif");
+
+22. ________ selects every <p> element that is the first child of its parent
+
+A. p>first-child		B. p:first-child	
+C. p[first-child]		D. p#first-child
+
+23. ___________ pseudo-element is used to add a special style to the first line of a text
+
+A. ::first-line	  B. :first-line	C. first::line	D. first:line
+
+
+24. __________ property allows to add rounded borders to an element
+
+A. border-shape	    B. border-curve	C. border-radius   D. None
+
+25. Which of the following CSS property is used to add shadows to the text?
+
+A. text=shadow	B. text:shadow	   C. text-shadow	D. text_shadow
+

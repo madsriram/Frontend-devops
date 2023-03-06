@@ -1,0 +1,97 @@
+
+
+
+			HTML5 - MCQ Test
+
+
+1. _______ element is used to draw graphics via scripting
+
+A. <figcaption>		B. <mark>	C. <canvas>	D. <header>
+
+2. ________ element is used to specify a list of predefined options for a input control
+
+A. <embed>	B. <datalist>		C. <source>	D. <track>
+
+3. <legend> is used to assign a caption to a set of form fields as defined by a __________ element
+
+A. <fieldset>	B. <caption>	C. <fieldgroup>		D. <assign>
+
+4. ___________  is the replacement for cookies in HTML5
+
+A. Image Map	B. Canvas	C. Local Storage	D. None
+
+5. ________ tag is used to specify multiple media resources on media elements such as <audio> and <video>
+
+A. <source>	B. <mark>	C. <resource>	D. None
+
+6. _______ tag is used to specify a container for an external file, application or a media
+
+A. <canvas>	B. <figure>		C. <embed>	D. <source>
+
+7. _________ tag is used to display different types of shapes on the page
+
+A. <canvas>	B. <fig>		C. <img>	D. <svg> 
+
+8. _______ tag is used to define one or more clickable sections of an image
+
+A. <section>	B. <area>		C. <mark>	D. <div>
+
+9. ______ tag is used to define an image map
+
+A. <canvas>	B. <img>		C. <map>	D. <figure> 
+
+10. ________ element always starts on a new line and takes up the full width available
+
+A. block-level		B. inline	C. Both A & B	D. None
+
+11. __________ web design is about creating web pages that look good on all devices
+
+A. Static	B. Dynamic	C. Responsive	D. None
+
+12. _________ element allows to define different images for different browser window sizes
+
+A. <img>	B. <picture>	C. <canvas>	D. <svg>
+
+13. ________ is the user's visible area of a web page
+
+A. viewport	B. screen	C. area		D. section
+
+14. __________ is used to display a web page within a web page
+
+A. embed	B. container	C. iframe	D. canvas
+
+15. __________ defines an input field which is not visible to user
+
+A. <input type="hidden">		B. <input type="text" hidden>
+C. <input type="text" hidden="true">	D. <input type="hide">
+
+16. __________ attribute is used to automatically focus one particular form field on document load
+
+A. <input type = "autofocus" name = "search">
+B. <input type = "text" name = "search" autofocus>
+C. <input type = "text" name = "search" autofocused>
+D. <input type = "text" name = "search" autofocus="enabled">
+
+17. Select the correct option to enable the form autocomplete
+
+A. <form action="serverurl" autocomplete="on">
+B. <form action="serverurl" autocomplete="enable">
+C. <form action="serverurl" set="autocomplete">
+D. <form action="serverurl" autocompleteon>
+
+18. SVG stands for ________
+
+A. Scalable Vertical Graphics	B. Scale Vector Graph
+C. Scalable Vector Graphics	D. Scalable Virtual Graphics
+
+19. _________ event specifies where the dragged data can be dropped
+
+A. ondragover	B. ondragleave	C. ondragend	D. ondragenter
+
+20. Choose the correct option to remove an entry from local storage
+
+A. localStorage.removeEntry("username");
+B. localStorage.removeElement("username");
+C. localStorage.removeItem("username");
+D. localStorage.removeKey("username");
+

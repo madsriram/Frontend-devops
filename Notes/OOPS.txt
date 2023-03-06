@@ -1,0 +1,213 @@
+Object Oriented Programming
+
+	the process of decomposing a task into several objects
+
+Features of Object Oriented Programming System
+
+Classes
+Objects
+Data Encapsulation
+Data Abstraction
+Inheritance
+Polymorphism
+
+Class : is a set of well defined properties
+
+	it is a collection of varibles (data) & functions (operations)
+
+	class classname {
+		varibales
+		functions
+	}
+
+Object : is an instance of a class
+
+	 it is a runtime entity
+
+	 used to access the class members
+
+	 objectname.membername;
+
+Data Encapsulation
+
+	the process of binding data & operations together into a single unit
+
+	Object = Data + Operations
+
+Data Abstraction
+
+	representing essential features of an object without including the background details
+
+	i.e., binding in such a way that data is hidden & methods are exposed
+
+Inheritence:
+
+	the process of taking properties from one class to another
+
+	an object acquiring properties of another object
+
+Types of Inheritence:
+
+	(1) Single Inheritence
+	(2) Multi-level Inheritence
+	(3) Multiple Inheritence
+	(4) Heirarchical Inheritence
+	(5) Hybrid Inheritence
+
+Polymorphism
+
+	Ability to take more than one form
+
+	existing in multiple forms
+
+	var a = 10;
+	var b = 20;
+	var c = a + b;			// performs arithmetic addition
+	document.write("Sum is : "+c);	// performs string concatenation
+	
+
+
+
+Different ways of creating Javascript object
+
+
+var obj = { property1:value1, property2:value2, ... };
+
+
+<html>
+  <body>
+    <script>
+	var emp = { id:101, name:"Smith", salary:35000 };
+	document.write("EmpId : "+emp.id);
+	document.write("Name : "+emp.name);
+	document.write("Salary : "+emp.salary);
+    </script>
+  </body>
+</html>
+
+
+<html>
+  <body>
+    <script>
+	var emp = new Object();
+	emp.id = 102;
+	emp.name = "John";
+	emp.salary = 28500;
+	document.write(emp.id+"<br>"+emp.name+"<br>"+emp.salary);
+    </script>
+  </body>
+</html>
+
+
+<html>
+  <body>
+    <script>
+	function emp(id, name, salary) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+	var e1 = new emp(103, "Mike", 36000);
+	var e2 = new emp(104, "Peter", 28000);
+	document.write(e1.id+"<br>"+e1.name+"<br>"+e1.salary);	
+	document.write(e2.id+"<br>"+e2.name+"<br>"+e2.salary);	
+    </script>
+  </body>
+</html>
+
+<html>
+  <body>
+     <script>
+	class Employee {
+		constructor(id, name, salary) {
+			this.id = id;
+			this.name = name;
+			this.salary = salary;
+		}
+	}
+	var emp1 = new Employee(105, "Peter", 35000);
+	var emp2 = new Employee(106, "James", 43000);
+	document.write(emp1.id+"<br>"+emp1.name+"<br>"+emp1.salary);
+	document.write(emp2.id+"<br>"+emp2.name+"<br>"+emp2.salary);
+     </script>
+   </body>
+</html>
+
+constructor : is a special method used to initialize the class members
+
+this : is used to refer to the current object
+
+
+   <script>
+	class Employee {
+	   constructor(id, name, salary) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	   }
+	   showDetails() {
+	     document.write(this.id+"<br>"+this.name+"<br>"+this.salary);
+	   }
+	}
+	var emp1 = new Employee(110, "Martin", 33000);
+	var emp2 = new Employee(111, "Richards", 22000);
+	emp1.showDetails();
+	emp2.showDetails();
+   </script>
+
+
+
+
+Setters & Getters
+
+<script>
+    class Student {
+	constructor() {
+	     var name;
+	     var marks;
+	}
+	setName(name) {
+	    this.name = name;
+	}
+	getName() {
+	    return this.name;
+	}
+	setMarks(marks) {
+	    this.marks = marks;
+	}
+	getMarks() {
+	    return this.marks;
+	}
+    }
+    var s1 = new Student();
+    s1.setName("William");
+    s1.setMarks(86);
+    var s2 = new Student();
+    s2.setName("John");
+    s2.setMarks(75);   
+    document.write(s1.getName()+" score : "+s1.getMarks()+"<p>);
+    document.write(s2.getName()+" score : "+s2.getMarks()+"<p>);
+</script>
+
+
+Inheritence
+
+<html>
+  <body>
+    <script>
+	class Greeting {
+	    sayHello() {
+		document.write("Hello");
+	    }
+	}
+	class GreetUser extends Greeting {
+	    sayHello() {
+		document.write("Hello User, Welcome to this Page");
+	    }
+	}
+	var g = new GreetUser();
+	g.sayHello();
+    </script>
+  </body>
+</html>
+

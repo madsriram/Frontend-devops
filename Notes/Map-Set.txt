@@ -1,0 +1,165 @@
+Map
+
+is a collection of key-value pairs where the key can be of any type
+
+it remembers the original order in which the elements were added to it
+
+creating an empty map
+
+	const map = new Map();
+
+creating a map with initial values
+
+const courseMap = new Map([
+  ['markup', 'html'],
+  ['styling', 'css'],
+  ['scripting', 'javascript'],
+]);
+
+
+Adding values to map
+
+const map = new Map();
+
+map.set('markup', 'html');
+map.set('styling', 'css');
+map.set('scripting', 'javascript');
+
+accessing
+
+get(key)
+
+	returns value associated with the key
+	map.get('markup');  // returns html
+
+size property 
+
+	to know how many elements are in a Map
+	console.log('size of the map is', map.size); // 3
+
+has(key)
+
+	checks element present in the map based on key
+	returns true or false
+	console.log(map.has('html'));	// true
+
+delete(key)
+
+	Remove an element based on key
+	map.delete('sql'); 
+
+clear() 
+
+	removes all the elements from the Map
+	map.clear(); 
+
+
+const ageMap = new Map([
+  ['Smith', 25],
+  ['John', 32],
+  ['Mike', 23],
+  ['Sam', 29]
+]); 
+
+console.log(ageMap.keys());
+console.log(ageMap.values());
+console.log(ageMap.entries());
+
+Iterate Over a Map
+
+// with forEach
+ageMap.forEach((value, key) => {
+   console.log(`${key} is ${value} years old!`);
+});
+
+// with for-of
+for(const [key, value] of ageMap) {
+  console.log(`${key} is ${value} years old!`);
+}
+
+Convert an Object into a Map
+
+const address = {
+  'Tapas': 'Bangalore',
+  'James': 'Huston',
+  'Selva': 'Srilanka'
+};
+
+const addressMap = new Map(Object.entries(address));
+
+Convert a Map into an Object
+
+Object.fromEntries(map)
+
+Convert a Map into an Array
+
+const map = new Map();
+map.set('milk', 40);
+map.set("tea", 10);
+map.set('coffee', 50);
+
+console.log(Array.from(map));
+
+
+
+Set 
+
+is a collection of unique elements that can be of any type
+
+is also an ordered collection of elements
+
+
+const bookSet = new Set(['Html', 'Css', 'JavaScript']);
+console.log(bookSet);
+
+console.log(bookSet.size);
+
+
+const bookSet = new Set();
+
+bookSet.add('Html'); 
+bookSet.add('Css'); 
+bookSet.add('JavaScript'); 
+bookSet.add('Sql');
+console.log(bookSet);
+
+console.log(bookSet.has('Sql'));
+
+bookSet.delete('Sql');
+
+bookSet.clear();	// removes all elements from the Set
+
+
+Iterate Over a Set
+
+console.log(bookSet.values());
+
+
+const numSet = new Set([360, 156, 901]);
+
+console.log(numSet.values());
+
+
+// using forEach
+
+numSet.forEach((value) => {
+   console.log(value);
+});
+
+
+// using for-of
+
+for(const value of numSet) {
+   console.log(value);
+ }
+
+Convert a Set into an array
+
+const arr = [...numSet];
+console.log(arr);
+
+
+Creating Set from an array
+
+const someSet = new Set(arrayname);
+

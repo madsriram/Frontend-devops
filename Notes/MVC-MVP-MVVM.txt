@@ -1,0 +1,57 @@
+Design Patterns:
+
+are the proven solutions for a commonly recurring problem in software context
+
+MVC - Model - View - Controller
+
+MVP - Model - View - Presenter
+
+MVVM - Model - View - ViewModel
+
+MVC
+
+	Model - application data
+
+	View  - UI (accepting/displaying data to end user)
+
+	Controller - Controls the flow between View & Model
+
+MVC architecture allows to seperate presentation logic from the application logic
+
+provides multiple views of the same data
+
+
+MVC: The Model View Controller architecture tightly couples the view and the model components of the architecture. 
+
+MVP: This software architecture has a dependent user interface as it uses the presenter to act as a link between the view and the model.
+
+MVVM: MVVM implements data binding and allows easy separation of the model and the view. 
+
+
+MVC: The controller and the view component exhibit a one-to-many relationship.
+
+MVP: There is a one-to-one relationship between the presenter and the view in this architecture. 
+
+MVVM allows mapping multiple views with the single view mode, allowing one too many relationships. 
+
+
+MVC: The View functions independently and has no information about the controller.
+
+MVP: The View holds the presenter's knowledge in this software architecture. 
+
+MVVM: The view holds references to the ViewModel in this architecture.
+
+
+MVC: Due to the tight coupling of different layers, making changes is a hectic task.
+
+MVP: The layers are coupled loosely. We can easily make the modifications. 
+
+MVVM: Changes can be easily made
+
+
+MVC: We can use it suitably for small-scale projects only
+
+MVP: We can use it for simple as well as complex projects
+
+MVVM: This architecture model must only be used for complex projects
+

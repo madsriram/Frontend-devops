@@ -1,0 +1,244 @@
+
+
+setInterval()
+
+allows to execute a task repeatedly at a given interval of time
+
+setInterval(fillImg, 5000);
+
+executes fillImg function for every 5000 milli seconds (i.e., 5 seconds)
+
+
+i = setInterval(funTimer, 1000)
+
+clearInterval(i)
+
+clearInterval() 
+
+clears the interval set in the setInterval function
+
+
+setTimeout()
+
+allows to execute a function after the specified number of milliseconds
+
+executed only once after the given time elapsed
+
+setTimeout(functionname, timeinmilliseconds);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Asynchronous Javascript
+
+
+Functions running in parallel with other functions are called asynchronous
+
+
+With asynchronous programming, JavaScript programs can start long-running tasks, and continue running other tasks in parallell
+
+
+
+Callback
+
+A callback is a function passed as an argument to another function
+
+Any function that is passed as an argument to another function so that it can be executed in that other function is called as a callback function
+
+it will execute in the background while the rest of the code runs
+
+executing code in response to an event
+
+button = document.getElementById('button');
+function callback(){
+console.log("Hello world");
+}
+
+button.addEventListener('click',callback);
+
+
+addEventListener()
+
+allows to register an event with a source element
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Asynchronous JavaScript</h1> <p>
+<h1>Callback Functions</h1>
+
+<h3>The result of the calculation is : <span id="res"></span></h3>
+
+<script>
+function display(result) {
+  document.getElementById('res').innerHTML = result;
+}
+
+function addNums(num1, num2, simpleCallback) {
+  let sum = num1 + num2;
+  simpleCallback(sum);
+}
+
+addNums(10, 5, display);
+</script>
+
+</body>
+</html>
+
+in the above example, display function is a called a callback function
+
+NOTE:
+
+Dont to use parenthesis when passing a function as an argument
+
+
+
+Asynchronous Javascript
+
+XMLHttpRequest
+
+is an object which allows to make asynchronous HTTP calls to the server application
+
+provides following functions:
+
+open() - opens connection with the server application to send requests
+
+send() - sends request to the server application
+
+onreadystatechange = <callback function>
+
+readystate
+
+0 - uninitialized
+1 - loading
+2 - loaded
+3 - waiting
+4 - complete
+
+responseText : is used to refer to the data received from the server
+
+
+
+var a = "10";	// string
+var b = 10;	// number
+
+if(a == b)	// true	  == checks only the contents
+
+if(a === b)	// false  === checks both content & data types
+
+
+
+
+
+
+most modern asynchronous JavaScript methods don't use callbacks
+
+in JavaScript, asynchronous programming is solved using Promises instead
+
+Promise
+
+a promise is an object that encapsulates the result of an asynchronous operation
+
+Promises are used to handle asynchronous operations in JavaScript
+
+
+They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code
+
+
+
+A promise object has a state that can be one of the following:
+
+(1) Pending (indicating that the asynchronous operation is in progress)
+
+(2) Fulfilled with a value 
+
+(3) Rejected for a reason
+
+
+
+
+Consuming a Promise: then, catch, finally
+
+To get the value of a promise when it’s fulfilled, you call the then() method of the promise object.
+
+
+promiseobject
+  .then(onFulfilled)
+  .catch(onRejected)
+  .finally
+
+e.g:
+
+getUsers()
+  .then(data => console.log('Promise Resolved : ', data))
+  .catch(err => console.log('Promise Rejected', err));
+
+
+
+
+
+
+console.log('Script start');
+
+setTimeout(() => {
+  console.log('setTimeout');
+}, 0);
+
+new Promise((resolve, reject) => {
+    resolve('Promise resolved');
+  }).then(res => console.log(res))
+    .catch(err => console.log(err));
+
+console.log('Script End');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+json()
+
+It returns a promise which resolves with the result of parsing the body text as JSON
+
+result of taking JSON as input and parsing it to produce a JavaScript object
+

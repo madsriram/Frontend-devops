@@ -1,0 +1,186 @@
+
+
+
+		Bootstrap-Javascript MCQ Test
+
+
+1. _______ is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development
+
+A. HTML		B. Bootstrap	   C. CSS	D. Meta
+
+2. What are the features of bootstrap?
+
+A. Mobile first approach		B. Easy to get started
+C. Browser Support			D. All of the above
+
+3. Bootstrap package includes?
+
+A. Scaffolding	  			B. Components   			C. JavaScript Plugins			D. All of the above
+
+4. Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to _______ as the device or viewport size increases
+
+A. 8 columns	B. 10 columns	C. 12 columns	D. 16 columns
+
+5. _________ in Bootstrap allow you to move, show and hide content based on viewport size
+
+A. Media Queries	B. Scaffolding	  C. Components	  D. Plugins
+
+
+6. __________ indicate the current page's location within a navigational hierarchy that automatically adds separators via CSS
+
+A. nav		B. navbar	C. breadcrumb	D. location
+
+
+7. Glyphicons is mainly used for providing __________
+
+A. Slideshow	B. graphic images   C. animation    D. different icons
+
+
+8. Which of the following class in bootstrap is used to create a big box for calling extra attention?
+
+A. .box		B. .jumbotron   C. .container	D. .container-fluid
+
+
+9. Which of the following class is used to create a black navigation bar?
+
+A. .navbar-default		B. .navbar-inverse
+C. .navbar-black		D. .navbar-dark
+
+
+10. The _______ plugin is a component for cycling through an element, like a slideshow
+
+A. slideshow	B. slider	C. scrollspy	D. carousel
+
+
+11. The class used to shape an image to a circle is
+
+A. .img-rounded	  B. .image-rounded   C. .img-circle    D. .image-circle
+
+
+12. Which of the following class in Bootstrap is used to create a large button?
+
+A. .btn-xl	B. .btn-lrg	C. .btn-large	  D. .btn-lg
+
+
+13. Which of the following is correct method to add a success button?
+
+A. <button class = "btn btn-success"> success </button>
+B. <button class = "btn button-success"> success </button>
+C. <button class = "button btn-success"> success </button>
+D. <button class = "button btn-primary"> success </button>
+
+
+14. Which of the following creates a table with no border?
+
+A. <table class="table table-noborder">
+B. <table class="table table-bordernone">
+C. <table class="table table-borderless">
+D. <table class="table table-nillborder">
+
+
+15. Which of the following creates green colored variant of a table
+
+A. <table class="table table-success">
+B. <table class="table color-green">
+C. <table class="table tbcolor-green">
+D. <table class="table table-green">
+
+
+16. Which is the correct JavaScript statement to print the addition of two numbers 10 and 20 in a paragraph whose id is 'result'?
+
+A. getElementById("result").innerHTML = 10+20;
+B. getElementById("result").innerHTML = "10+20";
+C. getElementById("#result").innerHTML = 10+20;
+D. getElementById("#result").val = 10+20;
+
+17. What is the output of the following JavaScript code?
+
+<script>
+	var a;
+	console.log(a+1);
+</script>
+
+A. 0
+B. undefined
+C. 1
+D. NaN
+
+
+
+18. Predict the output of the following code
+
+function job1(callback) {
+    setTimeout(function() {
+        callback('test 1');
+    }, 2000);
+}
+function job2(callback) {
+    setTimeout(function() {
+        callback('test 2');
+    }, 4000);
+}
+job1(function(data) {
+    console.log(data);
+    job2(function(data) {
+        console.log(data);
+    });
+});
+A. test1 test2	    B. test2 test1	C. test1	D. test2
+
+19.  Predict the output of the following code
+
+function job() {
+    return new Promise(function(resolve, reject) {
+        reject();
+    });
+}
+let promise = job();
+promise
+.then(function() {
+    console.log('Success-1');
+})
+.then(function() {
+    console.log('Success-2');
+})
+.catch(function() {
+    console.log('Error');
+})
+.then(function() {
+    console.log('Success-3');
+});
+A. Success-1 Success-2 Success-3 Error	 
+B. Success-2 Error   
+C. Error Success-3	
+D. Error
+
+
+
+20. Predict the output of the following code
+
+async function f() {
+  let result = 'Hello';
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('World'), 1);
+  });
+  result = await promise;
+  console.log(result);
+}
+f();
+
+A. Hello
+B. World
+C. Hello World
+D. World Hello
+
+
+21. Predict the output
+
+(function(){
+  setTimeout(()=> console.log(1),2000);
+  console.log(2);
+  setTimeout(()=> console.log(3),0);
+  console.log(4);
+})();
+
+A. 1 2 3 4	B. 2 3 4 1	C. 2 4 3 1	D. 2 3 1 4
+

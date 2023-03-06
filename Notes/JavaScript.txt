@@ -1,0 +1,1134 @@
+				JavaScript
+
+is a programming language for web
+
+scripting language (allows to combine programming code with tags)
+
+is case sensitive
+
+HTML : developing the content of the web page
+
+CSS : layout of the web page & styling
+
+JavaScript : specifies the behaviour of the web page 
+
+	allows to create dynamic web pages
+
+	makes the web page interactive
+
+	front-end validations, manipulating the document elements etc
+
+Javascript code can be included into the HTML document in different ways
+
+1. internal i.e., using <script> tag either in <head> or in <body>
+
+2. external <script src="externalfile.js">
+
+
+We can have multiple <script> tags in a document
+
+
+jsdemos>greet.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Greeting</title>
+  </head>
+  <body>
+    <script>
+       alert("Hello Guest, Welcome to Javascript");
+    </script>
+  </body>
+</html>
+
+
+
+alert() function of window object, used to display some message
+
+Javascript is an object based language
+
+window.alert() or alert() is same
+
+comment symbol
+
+// - for single line comment
+
+/*
+- - -
+- - -
+*/
+	for multi linne comment
+
+
+
+jsdemos\greet.html
+
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Greeting</title>
+ </head>
+ <body>
+  <script>
+    // alert("Hello Guest, Welcome to Javascript");
+
+   var username = prompt("Enter your name");	    
+   document.write("<center><h1>Hello, "+username+" Welcome to JavaScript</h1></center>");
+  </script>
+ </body>
+</html>
+
+Javascript is an object based language i.e., provides various objects
+
+in the above code document object refers to the HTML document
+
+write function of the document object allows to write some text in the document body
+
+prompt() function of window object, used to accept value from user at runtime
+
+Javascript is a loosly typed language
+
+var a;			// type of a is undefined
+
+a = 10;			// a will be number type
+
+a = "Hello"		// a will be string type
+
+a = true;		// a will be boolean type
+
+
+
+Using external Javascript file
+
+jsdemos\greeting.js
+     
+     document.write("Hello Guest, Welcome to JavaScript, external javascript file");
+
+jsdemos\greeting.html
+
+<!DOCTYPE html>
+<html>
+   <head><title>External Javascript</title></head>
+     <body>
+        <script src="greeting.js">
+        </script>
+    </body>
+</html>
+
+
+Javascript is a loosly typed language
+
+var a;
+
+a = "Hello";	// a becomes string type variable
+a = false;	// a becomes boolean type variable
+a = 10;		// a becomes number type variable
+
+var a = 10, b = 20;
+
+var c = a + b;	// + is performing arithmetic addition operation
+
+document.write("The result is : "+c);  // here + is performing concatenation operation
+
+	The result is : 30	
+
+
+document.write(c+" is the result");  // here + is performing concatenation operation
+
+	30 is the result
+
+document.write("The result of "+a+" and "+b+" is : "+c);
+
+The result of 10 and 20 is : 30
+
+sumdemo.html
+
+<html>
+<body>
+  <script>
+     var a = prompt("Enter 1st number");
+     var b = prompt("Enter 2nd number");    
+     var c = parseInt(a) + parseInt(b);
+     document.write(`The sum of ${a} and ${b} is : ${c}`);  // back quote
+  </script>
+</body>
+</html>
+
+document.write("The sum of "+a+" and "+b+" is : "+c);
+
+			OR
+
+document.write(`The sum of ${a} and ${b} is : ${c}`);
+
+The sum of 10 and 20 is : 30
+
+
+
+
+
+     var a = parseInt(prompt("Enter 1st number"));
+     var b = parseInt(prompt("Enter 2nd number"));
+     document.write("type of a is : "+typeof(a));
+
+
+typedemo.html
+
+<!DOCTYPE Html>
+<html>
+ <body>
+  <script>
+    var a;
+    document.write("Type of a is : "+typeof(a));
+    a = 10;
+    document.write("<p>Type of a is : "+typeof(a));
+    a = "Hi";
+    document.write("<p>Type of a is : "+typeof(a));
+    a = false;
+    document.write("<p>Type of a is : "+typeof(a));
+  </script>
+ </body>
+</html>
+
+document.write(`Type of a is : ${typeof(a)}`);
+
++ is a concatination operator
+
+
+
+Control Structures
+
+if, switch
+while, for
+
+simple if
+
+if(condition)
+     statements
+
+if...else
+
+if(condition)
+  statements
+else
+  statements
+
+if...else if
+
+if(condition1)
+   statements
+else if(condition2)
+   statements
+...
+else
+  statements
+
+
+
+Write a javascript program to accept 2 numbers & print greater among them
+
+10
+30
+
+30 is greater than 10
+
+5
+2
+
+5 is greater than 2
+
+5
+5
+
+5 is equal to 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<body>
+  <script>
+    var a = parseInt(prompt("Enter 1st number"));
+    var b = parseInt(prompt("Enter 2nd number"));
+    if(a > b) 
+       document.write(`${a} is greater than ${b}`);
+   else if(b > a)
+       document.write(`${b} is greater than ${a}`);
+    else
+       document.write(`${a} is equal to ${b}`);
+  </script>
+</body>
+<html>
+
+
+
+Write a javascript code to accept a number & print single digit, double digit or multi-digit number depending on the input
+
+for e.g.,
+
+input:
+	Enter a number
+	15
+output:
+	15 is a double digit number
+
+<html>
+ <body>
+   <script>
+     var a = parseInt(prompt("Enter a positive number"));
+     if(a >= 0 && a < 10) 
+       document.write(a+" is a single digit number");
+     else if(a >= 10 && a < 100)
+       document.write(a+" is a double digit number");
+     else
+      document.write(a+" is a multi-digit number");
+    </script>
+  </body>
+<html>
+
+
+
+
+Write a javascript program to accept two numbers & one operator as input and perform the appropriate operation based on input (hint: use switch)
+
+for e.g.,
+
+input:
+	Enter 1st num	10
+	Enter 2nd num	4
+	Enter operator	-
+
+output:
+	Result = 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+   var a = prompt("Enter 1st number");
+   var b = prompt("Enter 2nd number");
+   var c = 0;
+   var op = prompt("Enter the operator");
+   switch(op)
+   {
+ 	case '+' : c = parseInt(a) + parseInt(b);
+		   break;
+
+ 	case '-' : c = a - b;
+		   break;
+
+ 	case '*' : c = a * b;
+		   break;
+
+ 	case '/' : c = a / b;
+		   break;
+
+	default: alert("Invalid operator, valid are +, -, *, /");
+   }
+   document.write("Result = "+c);
+</script>
+
+
+
+Write a javascript code to print the sum of 1st 10 numbers using while loop
+
+
+<html>
+  <body>
+     <script>
+ 	var i = 1, sum = 0;
+	while(i <= 10)
+	{
+	    sum = sum + i;	// sum += i;
+	    i++;
+	}
+	document.write("Sum of 1st 10 numbers is : "+sum);
+     </script>
+  </body>
+</html>
+
+
+
+for loop
+
+Syntax:
+
+	for(variable initialization; condition testing; variable increment/decrement)
+	{
+		executable statements
+	}
+
+Example:
+
+	var i;
+	for(i = 1; i <= 5; i++)
+	{
+		document.write("<p>i = "+i);
+	}
+
+	
+
+Write a javascript program to accept a number & print multiplication table for it
+
+for e.g: if given number is 5 then print as below
+
+	5 x 1 = 5
+	5 x 2 = 10
+	5 x 3 = 15
+	    .
+ 	    .
+	    .
+	5 x 10 = 50
+
+
+
+
+
+
+
+
+
+
+
+
+
+	var n, i = 1;
+	n = parseInt(prompt("Enter a number"));
+
+	for( i = 1; i <= 10; i++)
+        {
+	    document.write(`${n} x ${i} = ${(n*i)}<br>`);
+	}
+
+
+
+
+
+
+
+
+
+Arrays:
+
+an array is a collection of multiple values of same type refered by a common name
+
+Javascript allows to create an array of multiple type values
+
+<html>
+ <body>
+  <script>
+    var  courses = [ "HTML", "CSS", "JavaScript" ];
+    var i;
+    for(i = 0; i < courses.length; i++)
+      document.write(`${courses[i]} has ${courses[i].length} chars<br>`);	
+   </script>
+  </body>
+</html>
+
+arrayname.length - gives the array size
+
+courses.length - gives 3 according to the above code
+
+courses[0].length - gives 4, size of the first string in the array
+
+
+
+var nums = [ 65, 92, 36, 58, 75 ];
+
+another way of creating an array
+
+var nums = new Array(65, 92, 36, 58, 75);
+
+
+
+
+
+
+
+
+
+
+
+Functions:
+
+Function is a block of code to perform some particular task
+
+Functions are mainly classified into two categories
+
+(1) Built-in or pre-defined functions
+
+(2) User defined functions
+
+
+Built-in functions are further classified as
+
+(1) String functions
+(2) Date functions
+(3) Math functions
+
+
+String functions example
+
+<html>
+  <body>
+    <script>
+	var str = new String("Programmer");
+	document.write(str.toLowerCase()+"<p>");
+	document.write(str.toUpperCase()+"<p>");
+	document.write("charAt(3) : "+str.charAt(3)+"<p>");
+	document.write("indexOf(r) : "+str.indexOf('r')+"<p>");
+	document.write("lastIndexOf(r) : "+str.lastIndexOf('r')+"<p>");
+	document.write("substr(3) : "+str.substr(3)+"<p>");
+	document.write("substring(3, 7) : "+str.substring(3, 7)+"<p>");
+	document.write("search(g) : "+str.search('g')+"<p>");
+	document.write("match(Prog) : "+str.match('xyz')+"<p>");
+	document.write("replace(Prog,G): "+str.replace('Prog','G')+"<p>");
+	document.write("split(r) : "+str.split('r')+"<p>");
+    </script>
+  </body>
+</html>
+
+
+
+
+var str = "Hello";
+
+var str = new string("Programmer");
+
+var a = str.split('r');
+
+a = [P, og, amme]
+
+
+Write a javascript program to accept a line of text & print word count
+
+for e.g.,
+
+Enter a line of text
+
+	this is a line of text
+
+word count : 6
+
+<script>
+	var str = prompt("Enter a line of text");
+	var words = str.split(' ');
+	document.write('word count : '+words.length);
+</script>
+
+
+Date Functions
+
+
+<!DOCTYPE html>
+<HTML>
+ <BODY>
+  <script>
+	var dt = new Date();
+	document.write(dt+"<p>");
+	document.write(dt.getDate() + " : Day of the month" + "<br>");  	
+	document.write(dt.getDay()+" : Day of the week  (0-6)" + "<br>" );
+	document.write(dt.getHours()+" : Hour of the day " + "<br>");	
+	document.write(dt.getMinutes()+" : Minutes in the hour" + "<br>"); 
+	document.write(dt.getMonth()+" : The month (0-11)" + "<br>" );
+    document.write(dt.getSeconds()+ " : Seconds in the minute " + "<br>");
+	document.write(dt.getFullYear() +" : The year" + "<br>");
+  </script>
+ </BODY>
+</HTML>
+
+
+
+
+Write a javascript program to accept username & greet the user with appropriate message like Good morning, Good afternoon, Good evening based on when user visits the page
+
+for e.g.,
+
+Enter your name
+
+	Smith
+
+	Good afternoon Smith
+
+<script>
+   var username = prompt("Enter your name");
+   var dt = new Date();
+   var hr = dt.getHours();
+   if(hr < 12)
+	document.write('Good morning '+username);
+   else if(hr >= 12 && hr < 16)
+	document.write('Good afternoon '+username);
+   else if(hr >= 16 && hr < 19)
+	document.write('Good evening '+username);
+   else
+	document.write('Good night '+username);
+</script>
+
+
+Math functions
+
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  document.write("<h1>sqrt(36) = "+Math.sqrt(36));
+  document.write("<br>pow(3, 2) = "+Math.pow(3, 2));
+  document.write("<br>ceil(2.75) = "+Math.ceil(2.75));
+  document.write("<br>floor(5.45) = "+Math.floor(5.45));
+  document.write("<br>round(5.789) = "+Math.round(5.789)+"</h1>");
+</script>
+</body>
+</html>
+
+
+
+User defined functions
+
+Syntax:
+
+	function functionname() 
+	{
+		statements
+	}
+
+Example:
+
+	function greetUser() 
+	{
+		document.write("Hello User, Welcome to Functions");
+	}
+
+	greetUser();
+	
+
+
+<html>
+  <head>
+    <script>
+	function addNums(a , b) {
+	       var c = a + b;
+	       document.write("Sum = "+c);
+	}
+	function addNumbers(a , b) {
+	       return(a + b);
+	}
+     </script>
+  </head>
+  <body>
+     <script>
+	addNums(10, 5);
+	var c = addNumbers(10, 20);
+        document.write("Result is : "+c);
+     </script>
+  </body>
+</html>
+
+
+
+
+
+Write a javascript function named factorial which takes a number as input & return factorial of that number as output
+
+
+
+
+
+
+
+
+
+<html>
+  <head>
+   <script>
+    function factorial(n)
+    {
+      var f = 1;
+      while(n >= 1)
+      {
+	 f = f * n;
+	 n--;
+      }	
+      return f;
+    }
+   </script>
+  </head>
+  <body>
+    <script>
+	var a = prompt("Enter a number");
+	document.write("Factorial of "+a+" is "+factorial(a));
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Write a javascript function named vowelcount which takes a string as input & returns number of vowels in the given string
+
+
+
+Write a javascript function which takes name & a character  as inputs & print location of char if present
+
+<html>
+  <head>
+   <script>
+    function charcheck(str, ch) {
+      var res = str.search(ch);
+      if(res > 0)
+        document.write(ch+" found at "+(res+1)+" in "+str);
+      else
+	document.write(ch+" not found in "+str);
+    }
+   </script>
+  </head>
+  <body>
+    <script>
+	var s = prompt("Enter a string");
+	var c = prompt("Enter a char");
+	charcheck(s, c);
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Write a Javascript function to print number of vowels in the given name
+
+Enter your name : Rajendra
+
+There are 3 vowels in your name
+
+<html>
+  <head>
+    <script>
+	function vowelCount(name) {
+ 	   var count = 0;
+	   for(var i = 0; i < name.length; i++) {
+		if(name[i] == 'a' || name[i] == 'e' || name[i] == 'i' || name[i] == 'o' || name[i] == 'u')
+		count++;
+	   }
+	   document.write("There are "+count+" vowels in your name");
+	}
+    </script>
+ </head>
+ <body>
+   <script>
+	var username = prompt("Enter your name");
+	vowelCount(username.toLowerCase());
+   </script>
+ </body>
+</html>
+
+
+
+			Event Handling
+
+
+is the mechanism of responding to the various events fired in the application
+
+Calling a function when button is clicked
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <script>
+	function sayHello() 
+	{
+		alert("Hello, button clicked");
+	}
+    </script>
+  </head>
+  <body>
+    <button onclick="sayHello()">Click here</button>
+  </body>
+</html>
+
+
+
+
+<html>
+ <body>
+   <form name="form1">
+      Username : <input type="text" name="txtUser" id="t1"> <p>	
+      <input type="button" value="Click here" onclick="showName()">
+   </form>
+   <script>
+     function showName()
+     {
+       document.write("Your name is : "+document.form1.txtUser.value);	
+     }
+   </script>
+  </body>
+</html>
+
+
+
+
+
+
+Write a javascript program to swap contents of two text fields
+
+
+
+
+
+
+
+
+<html>
+ <body>
+<center>
+   <form name="form1">
+      Text1 : <input type="text" name="txt1"> <p>	
+      Text2 : <input type="text" name="txt2"> <p>	
+      <input type="button" value="Swap" onclick="swap()">
+   </form>
+</center>
+   <script>
+     function swap()
+     {
+       var temp = document.form1.txt1.value;
+       document.form1.txt1.value = document.form1.txt2.value;
+       document.form1.txt2.value = temp;
+     }
+   </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+DOM 	-	stands for Document Object Model
+
+DOM API -	set of functions to access or modify various dom elements
+
+(1) getElementById() - allows to access an HTML element using its id value
+
+(2) getElementsByName() - allows to access HTML elements by their name value
+			  returns an array
+
+	<input type="radio" name="gender" id="m" value="male">Male
+	<input type="radio" name="gender" id="f" value="female">Female
+
+	getElementsByName('gender') - returns 2 input elements
+	
+
+(3) getElementsByTagName - allows to access HTML elements by tag name
+			  returns an array
+
+	getElementsByTagName('p')
+
+	returns all the p elements available in the document	
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+ <body>
+   <form name="form1">
+      Enter a line of text : <input type="text" name="txt1" id="t1"> <p>	
+      <input type="button" value="Word Count" onclick="wordcount()">
+      <input type="reset" value="Clear">
+   </form>
+   <script>
+     function wordcount()
+     {
+      var str = document.getElementById("t1");
+      var words = str.split(" ");
+      document.getElementById("result").innerHTML = "Word count = "+words.length;
+     }
+   </script>
+   <p>
+   <div id="result"></div>
+  </body>
+</html>
+
+
+
+<!DOCTYPE Html>
+<html>
+  <head>
+     <script>
+        function changeContent() {
+           alert(document.getElementById('hd').innerHTML);
+	   document.getElementById('hd').innerHTML = "New Heading";
+	}
+	function getValue() {
+         alert("Text value: "+document.getElementById('txtUser').value);
+	}
+     </script>
+  </head>
+  <body>
+    <h1 id="hd">Heading-1</h1><p>
+    <h1 id="d">Heading-1</h1><p>
+    Enter your name : <input type="text" id="txtUser" name="txt">
+    <input type="button" onClick="changeContent()" value="Change Heading">
+    <input type="button" onClick="getValue()" value="Get Text">	
+  </body>
+</html>
+ 
+
+
+<html>
+ <head>
+  <script>
+  function showSelection() {
+	   var items = document.getElementsByName("hobbies");
+	   var sItems = " ";
+	   var i;
+	   for(i = 0; i < items.length; i++) {
+ 		if(items[i].checked == true) {
+ 			sItems += items[i].value+"<br>";
+		}
+	   }
+   document.getElementById('result').innerHTML = "<h3>Your hobbies are</h3>"+sItems;
+  }		
+    </script>
+  </head>
+  <body>
+     <h3>Hobbies:</h3>
+     <form>
+	<input type="checkbox" name="hobbies" value="Music">Music <p>
+	<input type="checkbox" name="hobbies" value="Playing">Playing <p>
+	<input type="checkbox" name="hobbies" value="WatchingTV">Watching TV <p>
+        <input type="checkbox" name="hobbies" value="Chating">Chating <p>
+	<input type="button" onClick="showSelection()" value="Show Selections">
+     </form>
+     <p>     
+     <div id="result"></div> <p>
+     <div id="q"></div>
+  </body>
+</html>
+
+ 
+<html>
+  <head>
+    <script>
+	function getParas() {
+		var paras = document.getElementsByTagName('p');
+		var i;
+		var p = " ";
+		for(i = 0; i < paras.length; i++) {
+		   p = p + paras[i].innerHTML;
+		}
+		document.write(p);
+	}
+    </script>
+  </head>
+  <body>
+     <p>First Paragraph</p>
+     <p>Second Paragraph</p>
+     <p>Third Paragraph</p>
+     <input type="button" onClick="getParas()" value="Get Paras">
+  </body>
+</html>
+
+
+
+
+
+
+<select id="qual" onchange="showQualification()">
+
+
+</select>
+
+
+function showQualification()
+{
+   document.getElementById('q').innerHTML = "Your qualification is : "+document.getElementById('qual').value;
+}
+
+
+<input type="text" name="txtUser" id="txt1" onblur="showText(this)">
+
+
+
+
+function showText(obj)
+{
+    alert("Your username is : "+obj.value);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Saving data in browser storage
+
+Can be done using localStorage & sessionStorage objects
+
+The localStorage object stores data with no expiration date
+
+The data is not deleted when the browser is closed, and are available for future sessions.
+
+window.localStorage or just localStorage
+
+The sessionStorage Object stores data for one session
+
+The data is deleted when the browser window is closed
+
+
+Saving data to local storage
+
+localStorage.setItem("key", "value"); // stores key-value to Local Storage
+
+localStorage.getItem("key");	// get value associated with the given key from Local Storage
+
+localStorage.removeItem("key"); // removes a particular item from Local Storage
+
+localStorage.clear();	// removes all items from Local Storage
+
+localstore.html
+
+<!DOCTYPE Html>
+  <html>
+    <body>
+	<form>
+	   First Name : <input type="text" name="firstname" id="fn">
+	   <p>
+	   <input type="button" value="Store data" onclick="storedata()">
+	</form>
+	<script>
+	  function storedata()
+	  {
+	    var fname = document.getElementById("fn").value;
+	    localStorage.setItem("firstname", fname);
+	    var courses = [ "HTML", "CSS", "Javascript" ];
+	    localStorage.setItem("courseList", JSON.stringify(courses));
+	    alert("Data stored in localStorage");
+	  }
+	</script>
+    </body>
+</html>
+		
+
+getlocaldata.html
+
+<!DOCTYPE Html>
+  <html>
+    <body>
+	<form>
+	  <input type="button" value="Get Data" onclick="showdata()"> 	</form>	
+	<p>
+	<h1 id="res"></h1> <p>
+	<h1 id="hc"></h1>
+	<script>
+		function showdata()
+		{
+		  var fname = localStorage.getItem("firstname");
+		  document.getElementById("res").innerHTML = fname;
+		  var courseTitles = localStorage.getItem("courseList");
+		  var courses = JSON.parse(courseTitles);
+		  document.getElementById("hc").innerHTML = courses;
+		}
+	</script>
+    </body>
+</html>
+
+
+Task:
+
+RegistrationForm - store username & password to the local storage
+
+LoginForm	- verify username & password with the stored data
+

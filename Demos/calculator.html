@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            box-sizing: border-box;
+        }
+        form>input{
+            height: 10vh;
+            width: 40%;
+            text-align: end;
+            font-size: x-large;
+            margin-bottom: 5px;
+        }
+        table{
+            width: 41%;
+            height: 50vh;
+            border: 2px solid #000;
+            border-collapse: collapse;
+        }
+        tr>td{
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        tr>td:hover{
+            cursor: pointer;
+        }
+        tr>td:last-child{
+            background-color: #1100ffbe;
+            color: #f0f8ff;
+            font-weight: bolder;
+        }
+        tr:nth-child(1){
+            color: #f0f8ff;
+            font-weight: bolder;
+        }
+        tr:nth-child(1)>td:nth-child(1){
+            background: #f50505cf;
+        }
+        tr:nth-child(1)>td:nth-child(2){
+            background: #f5bd05cf;
+        }
+    </style>
+    <script>
+        var act=null, num1=null, num2=null, result=null;
+        function setnum(e1){
+            e1=document.getElementById('input').value+e1;
+            document.getElementById('input').value=e1;
+        }
+        function getact(e2){
+            switch(e2){
+                case 'div' : act='div';break;
+                case 'mul' : act='mul';break;
+                case 'mun' : act='mun';break;
+                case 'ad' : act='ad';break;
+            }
+            num1=document.getElementById('input').value;
+            document.getElementById('input').value=null;
+        }
+        function calt(){
+            num2=document.getElementById('input').value;
+            switch(act){
+                case 'div' : 
+                if(num2!=0){
+                result=num1/num2;document.getElementById('input').value=result.toFixed(3);
+                }else{
+                    alert('Division with 0 is not possible');
+                    cls();
+                }
+                break;
+                case 'mul' : result=num1*num2;document.getElementById('input').value=result.toFixed(3);break;
+                case 'mun' : result=num1-num2;document.getElementById('input').value=result.toFixed(3);break;
+                case 'ad' : result=parseFloat(num1)+parseFloat(num2);document.getElementById('input').value=result;break;
+            }
+        }
+        function cls(){
+            num1=null;
+            num2=null;
+            document.getElementById('input').value=null;
+            act=null;
+            result=null;
+        }
+        function bw(){
+            document.getElementById('input').value=(document.getElementById('input').value-(document.getElementById('input').value%10))/10;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h2>Calculator</h2>
+        <form>
+            <input type="text" id="input" placeholder="0" readonly>
+        </form>
+        <table>
+            <tr>
+                <td colspan="2" onclick="cls()" id="cl">C</td>
+                <td onclick="bw()"><</td>
+                <td onclick="getact('div')">/</td>
+            </tr>
+            <tr>
+                <td onclick="setnum(7)">7</td>
+                <td onclick="setnum(8)">8</td>
+                <td onclick="setnum(9)">9</td>
+                <td onclick="getact('mul')">x</td>
+            </tr>
+            <tr>
+                <td onclick="setnum(4)">4</td>
+                <td onclick="setnum(5)">5</td>
+                <td onclick="setnum(6)">6</td>
+                <td onclick="getact('mun')">-</td>
+            </tr>
+            <tr>
+                <td onclick="setnum(1)">1</td>
+                <td onclick="setnum(2)">2</td>
+                <td onclick="setnum(3)">3</td>
+                <td onclick="getact('ad')">+</td>
+            </tr>
+            <tr>
+                <td colspan="2" onclick="setnum(0)">0</td>
+                <td onclick="setnum('.')">.</td>
+                <td onclick="calt()">=</td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<article>	
+
+	Used to specify a blog, a magazine or a newspaper article or any other independent piece of content in a document.
+
+<details>
+
+	Used to define any additional information on a topic or a summary.
+
+<dialog>
+
+	Used to specify a window or a dialog box
+
+<figcaption>
+
+	Used to specify a caption for a <figure> element
+
+<figure>
+
+	Used to specify a self-contained content like photos, diagrams etc.
+
+<footer>
+
+	Used to specify a footer for a section
+
+<header>
+
+	Used to specify a header for a section
+
+<main>
+
+	Used to specify the main content of a document
+
+<mark>
+
+	Used to mark or highlight the specified content.
+
+<meter>
+
+	Used to determine a scalar value within a given range.
+
+<nav>
+
+	Used to specify a navigation link in an HTML document.
+
+<progress>
+
+	Used to define the progress of a task.
+
+<section>
+
+	Used to specify a section in an HTML document.
+
+<summary>
+
+	Used to define a visible heading for the HTML <details> element
+
+<time>
+
+	Used to define a date or time.
+
+
+
+
+HTML5 Form Tags:
+
+<datalist>
+
+	Used to facilitate an auto complete feature for textfield
+
+<output>
+
+	Used to specify the output of a calculation or an outcome of the user action.
+
+
+
+Graphics Tags:
+
+<canvas>
+
+	Used to draw canvas in an HTML document.
+
+<svg>
+
+	Used to display shapes.
+
+
+
+HTML5 Media Tags:
+
+<audio>	
+
+Used to define an audio file in HTML.
+
+<video>
+
+	Used to specify a video file in HTML.
+
+<embed>	
+
+	Used to specify a container for an external file, application or a media.
+
+<source>
+
+	Used to specify multiple media resources for a media element.
+
+<track>
+
+	Used to specify the text tracks for an <audio> or a <video> element.
+
+
+
+HTML5 New <input> types:
+
+color	Used to define an input field to indicate a color selector.
+
+date	Used to define an input field to indicate a date selector.
+
+datetime	Used to display date and time along with the time zone information.
+
+datetime-local	Used to display date and time without the time zone information.
+
+email	Used to specify an input field with an email pattern validation property.
+
+month	Used to specify an input field to enter month for the particular year.
+
+number	Used to specify a field that accepts a numeric value only.
+
+range	Used to create a numeric value selector for a range of 1 to 100.
+
+search	Used to create a search field.
+
+tel	Used to define a control to enter a telephone number.
+
+time	Used to define a control to enter time value with no time zone.
+
+url	Used to define an input field to enter a URL.
+
+week	Used to create a week value selector for a particular year.
+

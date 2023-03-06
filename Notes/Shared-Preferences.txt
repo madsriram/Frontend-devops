@@ -1,0 +1,14 @@
+Shared Preferences
+
+Shared Preferences is the way in which one can store and retrieve small amounts of primitive data as key/value pairs to a file on the device storage such as String, int, float, Boolean that make up your preferences in an XML file inside the app on the device storage
+
+Shared Preferences can be thought of as a dictionary or a key/value pair 
+
+For example, you might have a key being “username” and for the value, you might store the user’s username
+
+And then you could retrieve that by its key (here username)
+
+You can have a simple shared preference API that you can use to store preferences and pull them back as and when needed
+
+The shared Preferences class provides APIs for reading, writing, and managing this data
+

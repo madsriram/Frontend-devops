@@ -1,0 +1,385 @@
+Features of ES6 (ECMAScript 6)
+
+
+Template literal
+
+` (Back Quote) - simplifies string operations
+
+
+var a = 10;
+var b = 20;
+var c = a + b;
+
+console.log("Sum of "+a+" and "+b+" = "+c); 
+
+  Sum of 10 and 20 = 30
+
+console.log(`Sum of ${a} and ${b} = ${c}`);
+
+  Sum of 10 and 20 = 30
+
+
+
+
+The let keyword allows you to declare a variable with block scope
+
+i.e., the scope of the variable will be limited to the block in which it is defined
+
+var a = 10; 	// Here a is 10
+{
+  let x = 5;	// Here a is 5
+}
+// Here a is 10
+
+for(let i of nums) {
+     i
+}
+
+
+var a;
+
+a = 10;
+
+let a;
+
+a = 5;
+
+The const keyword allows you to declare a constant
+
+Constants are similar to let variables, except that the value cannot be changed
+
+const must be initialized at the time of declaration
+
+const a = 100;
+
+
+
+
+
+Destructuring :
+
+allows to extract individual values from group of values
+
+Destructuring Array
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+	var arr = [ "Hello", "World" ];
+  
+	var [a1, a2] = arr;		// destructuring assignment
+  
+  	document.write(a1);
+	document.write(a2);
+    </script>
+  </body>
+</html>
+
+
+
+Destructuring an Object
+
+<script>
+  var emp = { empno:"1001", name:"William", desig:"Manager" };
+
+  var { empno, name, desig } = emp;
+
+  document.write("<h1><p>Emp Id : "+empno);
+  document.write("<p>Name : "+name);
+  document.write("<p>Desig : "+desig+"</h1>");	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+The rest parameter (...) allows a function to treat an indefinite number of arguments as an array
+
+... is called spread operator
+
+in the below example its used as a rest parameter
+
+<script>
+  function studentScores(name, ...marks) {
+    document.write("<p>Student Name : "+name+"<br>Marks:<p>");
+    for(var m of marks) {
+	document.write(m+"<br>");
+    }
+  }
+  studentScores("Smith", 86, 79, 78);
+  studentScores("John", 79, 82, 91, 66);
+  studentScores("Mike", 93, 84, 88, 75, 83);
+</script>
+
+NOTE: rest parameter must be the last argument in the parameter list
+
+
+write a function to add no. of values passed to function & return sum of all those values
+
+addNums(1, 2);
+addNums(1, 2, 3);
+addNums(1, 2, 3, 4, 5);
+
+
+<script>
+   function addNums(...vals)
+   {
+        var sum = 0;
+	for(var v of vals)
+	{
+	    sum = sum + v;
+	}
+	return sum;
+   }
+   document.write(addNums(1, 2));
+   document.write(addNums(1, 2, 3));
+   document.write(addNums(1, 2, 3, 4, 5));   
+   document.write(addNums(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));   
+</script>
+
+
+
+allows to copy values of one array to another array, merge arrays etc
+
+<script>
+  let a1 = [10, 20, 30];
+  let a2 = [40, 50, 60];
+  let ma = [...a1, ...a2];	// merging two arrays into single array
+  for(var e of ma)
+  {
+    document.write(e+" "); 	
+  }
+  document.write("<p>");
+  let ca = [...ma, 70, 80, 90, 100];   // copying elements of ma into ca
+  for(var v of ca)
+  {
+     document.write(v+" "); 	
+  }
+</script>
+
+
+
+
+
+
+
+
+
+function parameters with default values
+
+<script>
+	function addNums(x, y = 10) {
+	  return x + y;
+	}
+	document.write(addNums(1, 2));		 // will return 3
+	document.write(addNums(5)); 		// will return 15
+</script>
+
+
+
+
+
+
+
+
+Arrow Functions:
+
+Arrow functions allows a short syntax for writing function expressions
+
+Arrow Function (Anonymous Function) :
+
+function greet(user)
+{
+   console.log("Hello "+user);
+}
+
+let greet = (user) => {
+    console.log("Hello "+user);
+}
+
+greet("Mike");
+
+	OR
+
+let greet = (user) => console.log("Hello "+user); 
+
+greet("Peter");
+
+
+Normal function for add, subtract, multiply, divide two numbers
+
+    function addNums(a, b) {
+        return a + b;
+    }
+    function subNums(a, b) {
+        return a - b;
+    }
+    function mulNums(a, b) {
+        return a * b;
+    }
+    function divNums(a, b) {
+        return a / b;
+    }
+
+    console.log(addNums(3, 5));
+
+Arrow functions to add, subtract, multiply & divide two numbers
+
+<script>
+    let addNums = (a, b) => a + b;
+    let subNums = (a, b) => a - b;
+    let multiply = (a, b) => a * b;
+    let divide = (a, b) => a / b;	
+
+    document.write("Sum(10, 5) = "+addNums(10, 5));
+    document.write("<p>Diff(10, 5) = "+subNums(10, 5));
+    document.write("<p>Mul(10, 5) = "+multiply(10, 5));
+    document.write("<p>Div(10, 5) = "+divide(10, 5));
+</script>
+
+
+
+3 types for loops
+
+(1) for(var i = 0; i < 5; i++)
+
+(2) for...of	-	 returns values
+
+	for(var course of courses)
+	   document.write(course);
+ 
+(3) for...in	-	 returns indexes
+
+	for(var i in courses)
+	   document.write(courses[i]);
+
+
+
+
+
+
+
+
+
+
+<script>
+
+const ageMap = new Map([ ['Smith', 25], ['John', 32], ['Mike', 23], ['Sam', 29] ]); 
+
+// Iterate Over a Map with forEach
+ageMap.forEach((value, key) => {
+   document.write(`${key} is ${value} years old!<br>`);
+});
+
+// Iterate Over a Map with for-of
+for(const [key, value] of ageMap) {
+  document.write(`<p>${key} is ${value} years old!<br>`);
+}
+
+</script>
+
+
+
+
+
+
+// Convert an Object into a Map	(Object.entries())
+	const address = {
+	  'Tapas': 'Bangalore',
+	  'James': 'Huston',
+	  'Selva': 'Srilanka'
+	};
+	const addressMap = new Map(Object.entries(address));
+	console.log(addressMap.entries());
+
+// Convert a Map into an Object (Object.fromEntries())
+	console.log(Object.fromEntries(addressMap));
+
+// Convert a Map into an Array (Array.from())
+	const map = new Map();
+	map.set('milk', 40);
+	map.set('tea', 10);
+	map.set('coffee', 50);
+	console.log(Array.from(map));
+
+// Convert array of objects to Map
+
+<script>
+	const emps = [
+	  { empId: '101', empName: 'Smith' },
+	  { empId: '102', empName: 'John' },
+	  { empId: '103', empName: 'Mike' }
+	];
+	const empmap = new Map(emps.map((obj) => [obj.empId, obj.empName]));
+	console.log(empmap);
+</script>
+
+
+
+
+
+
+
+
+
+
+Create an empMap with empid as key & employee object as value
+
+employee object consists of empid, name, desig, salary
+
+(1) add multiple employee entries into the map
+
+(2) print employee count
+
+(3) print details of all the employees
+
+(4) print details of a particular employee based on empid
+
+(5) delete a particular employee based on empid
+
+
+<script>
+	const emps = [
+	  { empid: 101, name: 'Smith', desig: 'Manager', salary: 45000 },
+	  { empid: 102, name: 'Mike', desig: 'Associate', salary: 25000 },
+	  { empid: 103, name: 'Peter', desig: 'Manager', salary: 56000 }
+	];
+
+	var empMap = new Map([ ['101', emps[0]], ['102', emps[1]], ['103', emps[2]] ]);
+
+	console.log('Employee count : '+empMap.size);
+
+	// displaying all employees
+
+	empMap.forEach((value, key) => {
+	   console.log(value);
+	});
+
+	
+	// displaying a particular employee details
+
+	var emp_id = prompt("Enter empid to search");
+
+	if(empMap.has(emp_id))
+	    console.log(empMap.get(emp_id));
+	else
+	    console.log('No Employee found with this id : '+emp_id);
+
+	// deleting a particular employee
+
+	emp_id = prompt("Enter empid to delete");
+
+	if(empMap.has(emp_id))
+	    empMap.delete(emp_id);
+	else
+	    console.log('No Employee found with this id : '+emp_id);	
+
+</script>
+

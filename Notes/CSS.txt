@@ -1,0 +1,344 @@
+			CSS
+
+stands for Cascading Style Sheets
+
+allows to add styling to the web pages
+
+improves the presentation
+
+improves the look and feel of the web pages
+
+CSS is a standard style sheet language used for describing the presentation (i.e. the layout and formatting) of the web pages
+
+introduced in 1996 by the World Wide Web Consortium (W3C)
+
+allows to apply same style rules on multiple elements
+
+can control the presentation of multiple pages of a website with a single style sheet
+
+can present the same page differently on different devices
+
+can alter the display of existing HTML elements
+
+
+Including CSS in HTML Documents
+
+CSS can either be attached as a separate document or embedded in the HTML document itself
+
+There are 3 methods of including CSS in an HTML document:
+
+1. Inline styles - Using the style attribute in the HTML start tag
+
+2. Embedded styles - Using the <style> element in the head section of a document
+
+3. External style sheets - Using the <link> element, pointing to an external CSS file
+
+
+Inline Styles
+
+Inline styles are used to apply the unique style rules to an element by putting the CSS rules directly into the start tag
+
+It can be attached to an element using the style attribute
+
+The style attribute includes a series of CSS property and value pairs. 
+
+Each "property: value" pair is separated by a semicolon (;)
+
+Example:
+
+<h1 style="color:red; font-size:30px;">This is a heading</h1>
+
+<p style="color:green; font-size:22px;">This is a paragraph</p>
+
+<div style="color:blue; font-size:14px;">This is some text content</div>
+
+
+inlinestyles.html
+
+<!DOCTYPE html>
+<html>
+      <head>
+    	<title>Inline Styles Demo</title>
+      </head>
+      <body>
+	<h1 style="color:red; font-size:30px;">This is a heading-1 </h1>
+	<p style="color:green; font-size:22px;">This is a paragraph </p>
+	<div style="color:blue; font-size:14px;">This is some text </div>
+	<h1 style="color:blue; font-size:36px;">Another heading-1 </h1>
+	<p>This is another paragraph </p>
+      </body>
+</html>
+
+
+Embedded Style Sheets
+
+Embedded or internal style sheets only affect the document they are embedded in
+
+Embedded style sheets are defined in the <head> section of an HTML document using the <style> element
+
+Example: internalstyles.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Internal or Embeded styles</title>
+    <style>
+        body { background-color: YellowGreen; }
+        p { color: #fff; }
+        h1 { color:red }
+    </style>
+  </head>
+  <body>
+    <h1>This is a heading-1</h1>
+    <p>This is a paragraph</p>
+    <p>This is another paragraph</p>
+    <h1>This is another heading-1</h1>
+    <!-- overriding embedded style with inline style -->
+    <h1 style="color:blue; font-size:36px;">Another heading-1</h1> 
+  </body>
+</html>
+
+
+External Style Sheets
+
+An external style sheet is ideal when the style is applied to many pages of the website
+
+An external style sheet holds all the style rules in a separate document that you can link from any HTML file on your site
+
+External style sheets are the most flexible because with an external style sheet, you can change the look of an entire website by changing just one file
+
+You can attach external style sheets in two ways — linking and importing
+
+
+htmldemos (main folder)
+	css (sub folder)
+	   style.css
+body {
+    background: lightyellow;
+    font: 18px Arial, sans-serif;
+}
+h1 {
+    color: orange;
+}
+p {
+     color: blue;
+}
+
+externalstyles.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>External Style Sheet</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph of text</p>
+  </body>
+</html>
+
+
+
+
+in header of the HTML document (embedded)
+
+<style>
+    @import url("css/style.css");
+    div {
+        color: blue;
+        font-size: 16px;
+    }
+</style>
+
+or
+
+external style sheet i.e., style.css
+
+@import url("css/layout.css");
+@import url("css/color.css");
+body {
+    color: blue;
+    font-size: 14px;
+}
+
+
+A CSS stylesheet consists of a set of rules that are interpreted by the web browser and then applied to the corresponding elements such as paragraphs, headings, etc. in the document.
+
+A CSS rule have two main parts, a selector and one or more declarations:
+
+Syntax:
+
+selector { property: value; property: value; }
+
+Example:
+
+	h1 { color: blue; text-align: center; }
+
+The selector specifies which element or elements in the HTML page the CSS rule applies to
+
+h2 {
+    color: red;
+    text-align: center;
+}
+
+selector is a pattern to match the elements on a web page
+
+The style rules associated with that selector will be applied to the elements that match the selector pattern
+
+Selectors are one of the most important aspects of CSS as they allow you to target specific elements on your web page in various ways so that they can be styled
+
+Several types of selectors are available in CSS
+
+Universal Selector
+
+is denoted by an asterisk (*), matches every single element on the page
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+Element Type Selectors
+
+p {
+    color: blue;
+}
+
+The style rules inside the p selector will be applied on every <p> element (or paragraph) in the document
+
+Id Selectors
+
+The id selector is used to define style rules for a single or unique element
+
+The id selector is defined with a hash sign (#) immediately followed by the id value
+
+#error {
+    color: red;
+}
+
+This style rule renders the text of an element in red, whose id attribute is set to error.
+
+<h1 id="error"
+
+Class Selectors
+
+The class selector is defined with a period sign (.) immediately followed by the class value
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+<h1 class=blue>
+<p class=red>
+<div class=blue>
+
+The above style rules renders the text in blue of every element in the document that has class attribute set to blue
+
+p.blue {
+    color: blue;
+}
+
+renders the text in blue of only those <p> elements that has class attribute set to blue
+
+<p class=blue>Para-1</p>
+<p>Para-2</p>
+
+Child Selectors
+
+A child selector is used to select only those elements that are the direct children of some element
+
+A child selector is made up of two or more selectors separated by a greater than symbol (>)
+
+ul > li {
+    list-style: square;
+}
+
+Grouping Selectors
+
+Often several selectors in a style sheet share the same style rules declarations
+
+You can group them into a comma-separated list to minimize the code in your style sheet
+
+h1, h2, h3, p {
+    font-weight: bold;
+}
+
+
+Attribute selectors
+
+input[type="text"] {
+     background-color : pink;
+}
+
+CSS pseudo classes
+
+a:link
+a:active
+a:visited
+
+a:hover {
+    color:green;
+}
+
+
+
+Class Selectors
+htmldemos
+	css	
+	   borders.css
+.d1 {
+	border-style: solid;
+	border-color: red;
+	padding: 10px, 40px;
+	background-color: lightgrey;
+	resize: both;
+	overflow: auto;
+	height: 50px;
+	width: 80px;
+}
+
+.d2 {
+	background-color: lightgrey;
+	border-style: solid;
+	border-color: red;
+	padding: 10, 20;
+	border-radius: 25px;
+	height: 50px;
+	width: 80px;
+	text-align: center;
+}
+
+.d3 {
+	background-color: lightgrey;
+	border-style: solid;
+	border-color: red;
+	box-shadow: 10px 10px 5px #888888;
+	height: 50px;
+	width: 80px;
+}
+
+.d4 {
+	height: 50px;
+	width: 80px;
+	border-image: url(images/flower.PNG) 30 30 round;
+}
+
+htmldemos
+	borders.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/borders.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="d1"> Resizable Border </div> <br/>
+  <div class="d2"> Rounded Border </div> <br/>  
+  <div class="d3"> Box Shadow </div> <br/>  
+  <div class="d4"> Image Border </div> <br/>
+  <div> <img src="images/flower.PNG"/> </div>
+</body>
+</html>

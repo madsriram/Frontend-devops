@@ -1,0 +1,80 @@
+Web analytics
+
+
+Web analytics is the process of analyzing the behavior of visitors to a website
+
+This involves tracking, reviewing and reporting data to measure web activity, including the use of a website and its components, such as webpages, images and videos
+
+Data collected through web analytics may include traffic sources, referring sites, page views, paths taken and conversion rates
+
+The compiled data often forms a part of customer relationship management analytics (CRM analytics) to facilitate and streamline better business decisions
+
+Web analytics enables a business to retain customers, attract more visitors and increase the dollar volume each customer spends
+
+Analytics can help in the following ways:
+
+Determine the likelihood that a given customer will repurchase a product after purchasing it in the past
+
+Personalize the site to customers who visit it repeatedly
+
+Monitor the amount of money individual customers or specific groups of customers spend
+
+Observe the geographic regions from which the most and the least customers visit the site and purchase specific products
+
+Predict which products customers are most and least likely to buy in the future
+
+
+
+The objective of web analytics is to serve as a business metric for promoting specific products to the customers who are most likely to buy them and to determine which products a specific customer is most likely to purchase. This can help improve the ratio of revenue to marketing costs
+
+Web analytics process
+The web analytics process involves the following steps:
+
+1. Setting goals:
+
+The first step in the web analytics process is for businesses to determine goals and the end results they are trying to achieve. These goals can include increased sales, customer satisfaction and brand awareness. Business goals can be both quantitative and qualitative.
+
+2. Collecting data:
+
+The second step in web analytics is the collection and storage of data. Businesses can collect data directly from a website or web analytics tool, such as Google Analytics. The data mainly comes from Hypertext Transfer Protocol requests -- including data at the network and application levels -- and can be combined with external data to interpret web usage. For example, a user's Internet Protocol address is typically associated with many factors, including geographic location and clickthrough rates.
+
+3. Processing data
+
+The next stage of the web analytics funnel involves businesses processing the collected data into actionable information.
+
+4. Identifying key performance indicators (KPIs)
+
+In web analytics, a KPI is a quantifiable measure to monitor and analyze user behavior on a website. Examples include bounce rates, unique users, user sessions and on-site search queries.
+
+5. Developing a strategy
+
+This stage involves implementing insights to formulate strategies that align with an organization's goals. For example, search queries conducted on-site can help an organization develop a content strategy based on what users are searching for on its website.
+
+6. Experimenting and testing
+
+Businesses need to experiment with different strategies in order to find the one that yields the best results. For example, A/B testing is a simple strategy to help learn how an audience responds to different content. The process involves creating two or more versions of content and then displaying it to different audience segments to reveal which version of the content performs better.
+
+
+The two main categories of web analytics are off-site web analytics and on-site web analytics
+
+Off-site web analytics
+
+The term off-site web analytics refers to the practice of monitoring visitor activity outside of an organization's website to measure potential audience
+
+On-site web analytics
+
+On-site web analytics refers to a narrower focus that uses analytics to track the activity of visitors to a specific site to see how the site is performing
+
+
+
+Google Analytics:
+
+Google Analytics is a web analytics service offered by Google that tracks and reports website traffic
+
+lets you measure your advertising ROI as well as track your Flash, video, and social networking sites and applications
+
+is a platform that collects data from your websites and apps to create reports that provide insights into your business
+
+is an app measurement solution, available at no charge, that provides insight on app usage and user engagement
+
+

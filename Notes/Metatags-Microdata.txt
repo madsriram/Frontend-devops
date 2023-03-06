@@ -1,0 +1,44 @@
+Meta Tags:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+
+<meta http-equiv="refresh" content="5;url="https://example.com/">
+
+
+Meta title
+
+This is the page title that Google and most other search engines show in search results
+
+<title>Title of the page</title>
+
+
+Meta description
+
+<meta name="description" content="Place the meta description text here.">
+
+The meta description summarizes the page’s content. Search engines often use it for the snippet in search results
+
+
+
+<meta name=”robots” content="index, follow">
+
+index: tells bots to index the page
+
+follow: tells bots to crawl links on the page
+
+
+
+Microdata:
+
+
+Microdata is typically used for search engines and metadata is used for people using search engines
+
+Microdata is telling search engines what the page elements are
+
+Metadata is telling searchers what the page content is about
+
+
+Microdata involves HTML and CSS code whereas metadata uses words to describe a website
+

@@ -1,0 +1,686 @@
+
+				Web Basics
+
+
+HTML
+
+	Hyper Text Markup Language   -	allows to create web pages
+
+CSS
+
+	Style Sheet Language        -	Styling the web pages
+
+
+JavaScript
+
+	Scripting Langauage         -	allows to create dynamic web pages
+
+
+
+HTML : HyperText Markup Language
+
+	is used to create the web pages
+
+	is used in presentation of the data
+
+	provides various tags to design the web pages
+
+	Web page comprises of various elements like text, images, hyperlinks, audio, video, list data, tabular data, form etc	
+
+	is not case sensitive
+
+create a folder 	-	htmldemos
+
+file name		-	"first.html"
+
+<!DOCTYPE Html>
+<html>
+     <head>
+           <title>
+		First HTML Demo
+           </title>
+     </head>
+     <body bgcolor="cyan">
+	     <h1>Hello, Welcome to HTML</h1>
+	     <h2>Hello, Welcome to HTML</h2>
+	     <h3>Hello, Welcome to HTML</h3>
+	     <h4>Hello, Welcome to HTML</h4>
+	     <h5>Hello, Welcome to HTML</h5>
+	     <h6>Hello, Welcome to HTML</h6>	
+     </body>
+</html>
+
+<br> - line break
+<p> - paragraph break
+<hr> - draws a horizontal line
+
+<b>, <i>, <u>, <sub>, <sup>
+
+second.html
+
+<!DOCTYPE Html>
+<html>
+     <head>
+           <title>
+		Second HTML Demo
+           </title>
+     </head>
+     <body>
+	<b>bold</b> <br>
+	<i>italic</i> <br>
+	<u>underline</u> <p>
+	H<sub>2</sub>O			
+	<hr>
+	X<sup>3</sup> + Y<sup>3</sup>	
+     </body>
+</html> 
+
+
+
+Comments
+
+	<!--   -->
+
+
+Loading images into web page
+
+<img src="abc.jpg" align="top" alt="unable to display image">
+
+top/bottom/left/right/middle
+
+
+img tag allows to load specified image into html document
+
+src - image source
+
+align - aligning the image
+
+alt - alternative text to be displayed incase browser is unable to display the image
+
+
+Copy some image to htmldemos folder
+
+Save As second.html to imagedemo.html
+
+imagedemo.html
+
+<!DOCTYPE Html>
+<html>
+     <head>
+           <title>
+		Image Demo
+           </title>
+     </head>
+     <body>
+	<img src="c:\xyz\abc.jpg" align="right" alt="Unable to display image">
+     </body>
+</html>
+
+
+Hyperlinks
+
+anchor tag (<a>) allows to create hyperlinks in the document
+
+Linking to another page
+
+Linking to some section on the same page
+
+Linking to some section on another page
+
+Save As imagedemo.html to linksdemo.html
+
+linksdemo.html
+
+<!DOCTYPE Html>
+<html>
+     <head>
+           <title>
+		Hyperlinks Demo
+           </title>
+     </head>
+     <body>
+	<a href="first.html">Go to First Page</a> <p>
+
+	<a href="#htmlinfo">Linking to some section on same page</a>
+
+	<p>anchor tag allows to create hyperlinks in the page. anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page. </p>
+
+	<p>anchor tag allows to create hyperlinks in the page. anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page. </p>
+
+	<p>anchor tag allows to create hyperlinks in the page. anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page.anchor tag allows to create hyperlinks in the page. </p>
+
+	<h1 id="htmlinfo">HTML</h1> <p>
+	<h2>HTML stands for Hypertext markup language, allows to desing web pages</h2>
+
+
+
+    </body>
+</html>
+
+
+
+in first.html
+
+
+    <a href="linksdemo.html#htmlinfo">Linking to some section on another page</a>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+at the end of first.html, before </body> add the following:
+<body>
+  <a href="#HTML">About HTML</a>
+<center>
+  <h1>
+  <br>
+  <hr>
+</center>
+<center>
+  <h1>
+  <br>
+  <hr>
+</center>
+
+<h3 id="HTML">HTML</h3>
+<p>HTML stands for Hyper Text Markup Language. Used to create web pages. Used in presentation of data.  HTML stands for Hyper Text Markup Language. Used to create web pages. Used in presentation of data.  HTML stands for Hyper Text Markup Language. Used to create web pages. Used in presentation of data.   HTML stands for Hyper Text Markup Language. Used to create web pages. Used in presentation of data.
+</p>
+
+
+
+
+<a href="first.html" target="_blank">First</a>
+
+opens the linking page in a new tab
+
+by default target="_self", i.e., opens the link in the same page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+making an image as a hyperlink
+
+<a href="linksdemo.html">
+   <img src="abc.jpg">
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Representing data in list format
+
+<ol> - Ordered List	(numbers, roman numbers, alphabets)
+
+<ul> - Unordered List	(bullets, disc/circle/square)
+
+<li> - List Item (child element of ol/ul)
+
+
+listdemo.html
+
+<h3>Courses</h3>
+<ol type="a">
+  <li>SQL</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Javascript</li>
+  <li>Java</li>
+  <li>Angular</li>
+</ol>
+
+by default numbers
+
+can be changed to capital/small alphabets/roman numbers 
+
+<ol type="A">
+
+type values (a, A, i, I)
+
+<p>
+<h3>Unordered List</h3>
+<ul>
+  <li>SQL</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Javascript</li>
+  <li>Java</li>
+  <li>Angular</li>
+</ul>
+
+type values - by default disc, other values can be circle or square
+
+<ul type="square">
+
+
+
+Nested Lists
+
+<h3>Nested Lists</h3>
+<ol>
+  <li>Programming Languages
+    <ul type="disc">
+      <li>C</li>
+      <li>C++</li>
+      <li>Java</li>
+    </ul>
+  </li>
+  <li>Markup Languages
+    <ul type="circle">
+      <a href="linksdemo.html#htmlinfo"> <li>HTML</li> </a>
+      <li>XML</li>
+    </ul>
+  </li>
+  <li>Database Languages
+    <ul type="square">
+      <li>SQL</li>
+    </ul>
+  </li>
+</ol>
+
+Making list item as a hyperlink
+
+<a href="linksdemo.html#htmlinfo"> <li>HTML</li> </a>
+
+
+
+
+
+
+
+
+<ol>
+<ul>
+<dl>
+
+
+
+Description Lists
+
+list of terms, with a description of each term
+
+<dl> - description list
+<dt> - description term
+<dd> - to describe the term in a description list
+
+<p>
+<h2>Description List</h2>
+
+<dl>
+  <dt>HTML</dt>
+  <dd>- Hypertext Markup Language</dd>
+  <dt>XML</dt>
+  <dd>- eXtensible Markup Language</dd>
+</dl>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Displaying data in tabular format using <table>, <tr>, <th> & <td> tags
+
+tr - table row
+th - table heading (row heading or column heading)
+td - table data
+
+tabledemo.html
+
+<table border="2">   
+  <tr> <th>EmpNo</th> <th>EmpName</th> <th>Dept</th> </tr>
+  <tr> <td>101</td> <td>Smith</td> <td>Sales</td> </tr>
+  <tr> <td>102</td> <td>John</td> <td>Sales</td> </tr>
+  <tr> <td>103</td> <td>Mike</td> <td>Finance</td> </tr>
+  <tr> <td>104</td> <td>William</td> <td>Sales</td> </tr>
+  <tr> <td>105</td> <td>Peter</td> <td>Admin</td> </tr>
+</table>
+
+
+
+
+
+
+
+Column Spaning - spaning a cell across multiple columns
+
+<p>
+<table border="1">
+   <tr><th colspan="3">Employee Details</th></tr>
+   <tr> <th>EmpNo</th> <th>EmpName</th> <th>Dept</th> </tr>
+   <tr><td>101</td><td>Smith</td><td>Sales</td></tr>
+   <tr><td>102</td><td>John</td><td>Sales</td></tr>
+   <tr><td>103</td><td>Mike</td><td>Finance</td></tr>
+   <tr><td>104</td><td>William</td><td>Sales</td></tr>
+   <tr><td>105</td><td>Peter</td><td>Operations</td></tr>
+</table>   
+
+
+
+Row Spaning - spaning a cell across multiple rows
+
+<p>
+<h3>Row Spanning</h3>
+<table border="1">
+   <tr><th rowspan="2">Markup Languages</th>
+      <td>XML</td>
+      <tr><td>HTML</td></tr>
+   </tr>
+</table>
+
+
+htmlinfo.html
+
+	<h1>HTML Info</h1>
+
+xmlinfo.html
+
+	<h1>XML Info</h1>
+
+
+
+
+
+
+
+
+Making table data as a link
+
+<h3>Row Spanning</h3>
+<table border="1">
+   <tr><th rowspan="2">Markup Languages</th>
+   <td><a href="xmlinfo.html">XML</a></td>
+   <tr><td><a href="htmlinfo.html">HTML</td></tr>
+   </tr>
+</table>
+
+
+
+
+
+
+
+
+
+Audio
+
+Loading audio into the document
+
+search for some audio file & copy it into htmldemos folder
+
+  <audio src="audiobit.mp3" controls></audio>
+
+audiodemo.html
+
+<!DOCTYPE html>
+<html>
+  <body>
+     <audio src="audiobit.mp3" controls></audio>
+  </body>
+</html>
+
+controls attribute provides play, pause buttons 
+
+Loading video into the document
+
+search for some video file & copy it into htmldemos folder
+
+   <video src="video1.mp4" controls></video>
+
+videodemo.html
+
+<!DOCTYPE html>
+<html>
+  <body>
+     <video src="video1.mp4" controls></video>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading youtube video into the web page
+
+<iframe src="https://www.youtube.com/embed/XMUYoiUlutM" width="600" height="500">
+</iframe>
+
+
+iframe - inline frame
+
+allows to load multiple pages into one page
+
+https://www.youtube.com/watch?v=XMUYoiUlutM
+
+replace watch?v= with embed/
+
+https://www.youtube.com/embed/XMUYoiUlutM
+
+
+
+<iframe src="first.html" width="600" height="500">
+</iframe>
+
+
+
+
+
+
+
+
+
+Forms
+
+	Forms are used to design user interfaces
+
+	allows to capture input data from end user
+
+	acts as a container for various controls
+
+
+<form name="regform" method="POST" action="">
+
+GET
+
+is used to access a resource on the server
+
+allows to send limited amount of data (i.e., upto 255 chars) to server
+
+data sent will be concatenated with the url as a query string & displayed in address bar
+
+POST
+
+is used for posting data to the server
+
+allows to send unlimited amount of data to the server
+
+data sent is not displayed in the address bar
+
+by default, method="GET"
+
+
+action : is used to specify the server url to which data need to be sent
+
+registration.html
+
+<!DOCTYPE Html>
+<html>
+<body>
+<form name="regform" method="GET" action="">
+  Username : <input type="text" name="username"><p>
+  Password : <input type="password" name="pwd"> <p>
+  Email-Id : <input type="email" name="email-id"> <p>
+  Gender : <br>
+  <input type="radio" name="gender" value="M">Male
+  <input type="radio" name="gender" value="F">Female <p>
+  Hobbies : <br>
+  <input type="checkbox" name="hobbies" value="reading">Reading Books
+  <input type="checkbox" name="hobbies" value="watching">Watching TV
+  <input type="checkbox" name="hobbies" value="playing">Playing Games
+  <p>Qualification: <br>
+  <select>
+	<option>Under Graduate</option>
+	<option>Graduate</option>
+	<option>Post Graduate</option>
+  </select>
+  <p> Address: <br>
+  <textarea rows="5" cols="35"></textarea> <p>
+  <input type="submit" value="Register"> <p>
+  <input type="reset" value="Reset">
+</form>
+</body>
+</html>
+
+<form name="frm1" method="GET" action="serverside program"
+
+method="GET"
+
+allows to send limited amount of data i.e., upto 255 chars
+
+data will be concatenated with existing url as a query string & displayed in address
+
+
+method="POST"
+
+allows to send unlimited amount of data to the server
+
+does not display data in the address bar
+
+
+Inline Frames
+
+allows to embed one html document into another html document
+
+<!DOCTYPE html>
+<html>
+   <head>
+	<title>IFrame Demo</title>
+   </head>
+   <body>
+	<iframe src="welcome.html" name="f1" width="600px"></iframe><p>
+	<a href="listdemo.html" target="f1">Course List</a></p>
+	<iframe src="imagedemo.html" name="f2" width="600px"></iframe><p>
+	<a href="tabledemo.html" target="f2">Employee Details</a></p>
+   </body>
+</html>
+
+
+
+<span> - inline
+
+This is a <span>Span element</span>.
+
+<div> - starts a new block
+
+This is a <div>Div element</div>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

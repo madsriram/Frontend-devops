@@ -1,0 +1,153 @@
+			LESS
+
+
+stands for Leaner Style Sheets
+
+is a CSS preprocessor
+
+is a dynamic style sheet language that can be compiled into CSS
+
+cross-browser compatible
+
+is faster and easier
+
+It provides functionalities like variables, functions, mixins and operations that allows to build dynamic CSS
+
+LESS is written in JS, whereas SASS is written in Ruby
+
+
+Installing LESS
+
+
+	npm install less -g
+
+
+	lessc --version
+
+Variables
+
+LESS allows variables to be defined with an @ symbol
+
+The Variable assignment is done with a colon(:)
+
+
+main.less file
+
+@font-color:blue;
+@link-color:@font-color;
+
+h1 {
+color: @font-color
+}
+a {
+color: @link-color
+}
+
+	lessc main.less main.css
+
+
+
+
+1. creating a less file
+
+demo.less
+
+@primarycolor: #FF7F50;  
+@secondarycolor: #800080;  
+
+h1 {  
+    color: @primarycolor;  
+}  
+h2 {  
+    color: @secondarycolor;  
+}
+
+2. compiling less file
+
+	lessc demo.less demo.css
+
+3. Linking css with html
+
+demo.html
+
+<!DOCTYPE html>  
+<head>      
+  <link rel="stylesheet" href="demo.css">  
+</head>  
+<body>  
+  <h1>LESS stands for Leaner Style Sheet</h1>  
+  <h2>a CSS Preprocessor</h2>  
+</body>  
+</html>
+
+
+extend
+
+extend-demo.less
+
+.style {  
+  background: lightgreen;  
+}  
+h2 {  
+  &:extend(.style);  
+  font-style: italic;  
+}
+
+	lessc extend-demo.less extend-demo.css
+
+extend-demo.html
+
+<!DOCTYPE html>  
+<head>      
+ <link rel="stylesheet" href="extend-demo.css">  
+</head>  
+<body>  
+ <h2>Extend demo</h2>  
+</body>  
+</html>
+
+
+
+Mixins
+
+Mixins allow you to embed all the properties of a class into another class by simply including the class name as one of its properties
+
+.round-borders {
+  border-radius: 5px;
+}
+
+#menu {
+  color: gray;
+  .round-borders;
+}
+
+
+
+
+
+
+
+Import
+
+@import "style";      // imports the style.less
+
+
+Merge
+
+LESS allows the addition of values to comma or space separated list from multiple properties using a single property
+
+
+
+
+
+	npm install -g less-watch-compiler
+
+Syntax:
+
+	less-watch-compiler src dist
+
+
+c:\training\lessdemos>cd..
+
+c:\training>less-watch-compiler lessdemos lessdemos
+
